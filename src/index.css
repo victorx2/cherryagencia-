@@ -7,6 +7,12 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply font-sans text-gray-800 antialiased;
+    @apply font-sans text-gray-800 antialiased tracking-wide;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
   }
 }

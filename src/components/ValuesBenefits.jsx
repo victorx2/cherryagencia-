@@ -51,16 +51,16 @@ function ValueCard({ icon: Icon, title, description, index }) {
       transition={{ duration: 0.5, delay: index * 0.1 }}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
-      className="p-6 sm:p-8 rounded-2xl border-2 border-gray-200 bg-white transition-all duration-300 hover:border-cherry-red hover:shadow-xl hover:shadow-cherry-red/10"
+      className="p-6 sm:p-8 rounded-2xl bg-white/80 backdrop-blur-md border border-white/60 shadow-soft hover:shadow-soft-lg hover:border-cherry-gold/30 transition-all duration-300"
     >
       <motion.div
         animate={{ scale: hover ? 1.05 : 1 }}
-        className="w-14 h-14 rounded-xl bg-cherry-red/10 flex items-center justify-center text-cherry-red mb-4"
+        className="w-14 h-14 rounded-xl bg-cherry-gold/15 flex items-center justify-center text-cherry-gold mb-4"
       >
         <Icon className="h-7 w-7" aria-hidden="true" />
       </motion.div>
       <h3 className="font-serif text-xl font-semibold text-gray-900">{title}</h3>
-      <p className="mt-2 text-gray-600 leading-relaxed">{description}</p>
+      <p className="mt-2 text-gray-600 leading-relaxed tracking-wide">{description}</p>
     </motion.article>
   )
 }
@@ -72,11 +72,12 @@ export default function ValuesBenefits() {
   return (
     <section
       id="beneficios"
-      className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-gray-50"
+      className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-cream-white relative"
       aria-labelledby="beneficios-heading"
       ref={ref}
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="absolute inset-0 bg-cherry-gradient-soft pointer-events-none" aria-hidden="true" />
+      <div className="relative max-w-6xl mx-auto">
         <motion.h2
           id="beneficios-heading"
           initial={{ opacity: 0, y: 20 }}
@@ -90,14 +91,17 @@ export default function ValuesBenefits() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.08 }}
-          className="text-center text-gray-600 max-w-2xl mx-auto mb-16"
+          className="text-center text-gray-600 max-w-2xl mx-auto mb-16 tracking-wide"
         >
           Lo que nos define y lo que te ofrecemos al trabajar con nosotras.
         </motion.p>
 
-        {/* Valores - Tarjetas interactivas */}
         <div className="mb-20">
-          <h3 className="font-serif text-xl font-semibold text-cherry-red text-center mb-8">Nuestros valores</h3>
+          <div className="flex items-center justify-center gap-2 mb-8">
+            <div className="h-px w-12 bg-cherry-gold" aria-hidden="true" />
+            <h3 className="font-serif text-xl font-semibold text-cherry-red">Nuestros valores</h3>
+            <div className="h-px w-12 bg-cherry-gold" aria-hidden="true" />
+          </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {valueCards.map((v, i) => (
               <ValueCard key={v.title} {...v} index={i} />
@@ -107,7 +111,11 @@ export default function ValuesBenefits() {
 
         {/* Beneficios - Badges */}
         <div id="auditoria">
-          <h3 className="font-serif text-xl font-semibold text-cherry-red text-center mb-8">Beneficios para ti</h3>
+          <div className="flex items-center justify-center gap-2 mb-8">
+            <div className="h-px w-12 bg-cherry-gold" aria-hidden="true" />
+            <h3 className="font-serif text-xl font-semibold text-cherry-red">Beneficios para ti</h3>
+            <div className="h-px w-12 bg-cherry-gold" aria-hidden="true" />
+          </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {benefits.map((b, i) => {
               const BenefitIcon = b.icon
@@ -117,10 +125,10 @@ export default function ValuesBenefits() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.4, delay: 0.2 + i * 0.08 }}
-                className="flex gap-4 p-6 rounded-2xl bg-white border border-gray-200 shadow-sm"
+                className="flex gap-4 p-6 rounded-2xl bg-white/80 backdrop-blur-md border border-white/60 shadow-soft"
               >
-                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-cherry-red/10 flex items-center justify-center text-cherry-red">
-                  <BenefitIcon className="h-6 w-6" aria-hidden="true" />
+                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-cherry-gold/15 flex items-center justify-center text-cherry-gold">
+                  <BenefitIcon className="h-6 w-6" aria-hidden="true" strokeWidth={1.5} />
                 </div>
                 <div>
                   <h4 className="font-serif font-semibold text-gray-900">{b.title}</h4>
@@ -142,7 +150,7 @@ export default function ValuesBenefits() {
             href="https://wa.me/584243363648"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-8 py-4 bg-cherry-red text-white font-semibold rounded-lg hover:bg-cherry-dark transition-colors focus:outline-none focus:ring-2 focus:ring-cherry-red focus:ring-offset-2"
+            className="inline-flex items-center justify-center px-8 py-4 bg-cherry-gradient text-white font-semibold rounded-lg shadow-soft hover:shadow-soft-lg hover:scale-[1.02] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cherry-red focus:ring-offset-2"
           >
             Solicitar Auditoría Gratis
           </a>

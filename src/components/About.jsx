@@ -32,11 +32,12 @@ export default function About() {
   return (
     <section
       id="nosotros"
-      className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-white"
+      className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-cream-white relative"
       aria-labelledby="nosotros-heading"
       ref={ref}
     >
-      <div className="max-w-4xl mx-auto">
+      <div className="absolute inset-0 bg-cherry-gradient-soft pointer-events-none" aria-hidden="true" />
+      <div className="relative max-w-4xl mx-auto">
         <motion.h2
           id="nosotros-heading"
           initial={{ opacity: 0, y: 20 }}
@@ -50,7 +51,7 @@ export default function About() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-center text-lg sm:text-xl text-cherry-red font-serif italic mb-12 max-w-2xl mx-auto"
+          className="text-center text-lg sm:text-xl text-cherry-red font-serif italic mb-12 max-w-2xl mx-auto tracking-wide"
         >
           &ldquo;En Cherry, de la mano de Raizel e Irma, convertimos tu visión en una conexión emocional que perdura.&rdquo;
         </motion.blockquote>
@@ -58,7 +59,7 @@ export default function About() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.15 }}
-          className="prose prose-lg mx-auto text-gray-600 text-center space-y-4"
+          className="prose prose-lg mx-auto text-gray-600 text-center space-y-4 tracking-wide"
         >
           <p>
             En el corazón de Cherry Agencia Creativa palpita la visión compartida de dos profesionales apasionadas: <strong className="text-gray-900">Raizel Bolivar</strong> e <strong className="text-gray-900">Irma Gabriela</strong>. Más que una agencia, somos un espacio donde la experiencia en marketing y la sensibilidad del branding se fusionan para dar vida a proyectos con propósito.
@@ -68,11 +69,16 @@ export default function About() {
           </p>
         </motion.div>
 
+        <div className="flex items-center justify-center gap-3 my-12" aria-hidden="true">
+          <div className="h-px w-16 bg-cherry-gold" />
+          <span className="text-cherry-gold font-serif text-sm">◆</span>
+          <div className="h-px w-16 bg-cherry-gold" />
+        </div>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="font-serif text-xl font-semibold text-gray-900 text-center mt-12 mb-10"
+          className="font-serif text-xl font-semibold text-gray-900 text-center mb-10"
         >
           Nuestros Valores Fundamentales
         </motion.p>
@@ -85,15 +91,15 @@ export default function About() {
               initial={{ opacity: 0, y: 16 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: 0.25 + i * 0.06 }}
-              className="p-6 rounded-2xl border border-gray-100 bg-gray-50/50"
+              className="p-6 rounded-2xl bg-white/80 backdrop-blur-md border border-white/60 shadow-soft hover:shadow-soft-lg hover:border-cherry-gold/20 transition-all duration-300"
             >
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-cherry-red/10 flex items-center justify-center text-cherry-red">
-                  <Icon className="h-5 w-5" aria-hidden="true" />
+                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-cherry-gold/15 flex items-center justify-center text-cherry-gold">
+                  <Icon className="h-5 w-5" aria-hidden="true" strokeWidth={1.5} />
                 </div>
                 <div>
                   <h3 className="font-serif font-semibold text-gray-900">{v.title}</h3>
-                  <p className="mt-1 text-gray-600 text-sm leading-relaxed">{v.description}</p>
+                  <p className="mt-1 text-gray-600 text-sm leading-relaxed tracking-wide">{v.description}</p>
                 </div>
               </div>
             </motion.article>

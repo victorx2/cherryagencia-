@@ -8,14 +8,16 @@ const FOOTER_LINKS = [
   { href: '#auditoria', label: 'Auditoría Gratis' },
 ]
 
-const INSTAGRAM_URL = 'https://www.instagram.com/cherryagencia' // Ajustar si tienen usuario real
-const THREADS_URL = 'https://www.threads.net/@cherryagencia' // Ajustar si tienen usuario real
-const PHONE = '0424-3363648'
-const PHONE_LINK = 'tel:+584243363648'
+const INSTAGRAM_URL = 'https://www.instagram.com/cherryagencia'
+const THREADS_URL = 'https://www.threads.net/@cherryagencia'
+const PHONE_1 = '0424-3363648'
+const PHONE_1_LINK = 'tel:+584243363648'
+const PHONE_2 = '+58 412-8730210'
+const PHONE_2_LINK = 'tel:+584128730210'
 
 export default function Footer() {
   return (
-    <footer className="bg-cherry-red text-white py-16 px-4 sm:px-6 lg:px-8" role="contentinfo">
+    <footer className="bg-cherry-gradient text-white py-16 px-4 sm:px-6 lg:px-8" role="contentinfo">
       <div className="max-w-6xl mx-auto">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand */}
@@ -64,11 +66,20 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href={PHONE_LINK}
-                  className="flex items-center gap-3 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-cherry-red rounded"
+                  href={PHONE_1_LINK}
+                  className="flex items-center gap-3 hover:text-cherry-gold transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-cherry-red rounded"
                 >
                   <Phone className="h-5 w-5 flex-shrink-0" aria-hidden="true" />
-                  {PHONE}
+                  {PHONE_1}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={PHONE_2_LINK}
+                  className="flex items-center gap-3 hover:text-cherry-gold transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-cherry-red rounded"
+                >
+                  <Phone className="h-5 w-5 flex-shrink-0" aria-hidden="true" />
+                  {PHONE_2}
                 </a>
               </li>
             </ul>

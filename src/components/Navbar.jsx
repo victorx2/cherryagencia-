@@ -26,7 +26,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100/80 shadow-glass">
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Navegación principal">
         <div className="flex items-center justify-between h-16 lg:h-20">
           <a href="#" className="flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-cherry-red focus:ring-offset-2 rounded" aria-label="Cherry Agencia Creativa - Inicio">
@@ -34,7 +34,6 @@ export default function Navbar() {
             <span className="font-serif text-xl font-semibold text-gray-900">Cherry</span>
           </a>
 
-          {/* Desktop */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
@@ -47,13 +46,12 @@ export default function Navbar() {
             ))}
             <a
               href="#auditoria"
-              className="inline-flex items-center justify-center px-5 py-2.5 bg-cherry-red text-white font-semibold rounded-lg hover:bg-cherry-dark transition-colors focus:outline-none focus:ring-2 focus:ring-cherry-red focus:ring-offset-2"
+              className="inline-flex items-center justify-center px-5 py-2.5 bg-cherry-gradient text-white font-semibold rounded-lg shadow-soft hover:shadow-soft-lg hover:scale-[1.02] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cherry-red focus:ring-offset-2"
             >
               Auditoría Gratis
             </a>
           </div>
 
-          {/* Mobile menu button */}
           <button
             type="button"
             className="md:hidden p-2 text-gray-600 hover:text-cherry-red focus:outline-none focus:ring-2 focus:ring-cherry-red rounded"
@@ -65,7 +63,6 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile menu */}
         <AnimatePresence>
           {open && (
             <motion.div
@@ -74,7 +71,7 @@ export default function Navbar() {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.2 }}
-              className="md:hidden overflow-hidden border-t border-gray-100"
+              className="md:hidden overflow-hidden border-t border-gray-100 bg-white/95 backdrop-blur-md"
             >
               <div className="py-4 space-y-1">
                 {navLinks.map((link) => (
@@ -89,7 +86,7 @@ export default function Navbar() {
                 ))}
                 <a
                   href="#auditoria"
-                  className="block mx-4 mt-4 py-3 text-center bg-cherry-red text-white font-semibold rounded-lg"
+                  className="block mx-4 mt-4 py-3 text-center bg-cherry-gradient text-white font-semibold rounded-lg"
                   onClick={() => setOpen(false)}
                 >
                   Auditoría Gratis
