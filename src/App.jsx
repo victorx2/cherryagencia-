@@ -3,6 +3,7 @@ import Hero from './components/Hero'
 import ServicesGrid from './components/ServicesGrid'
 import About from './components/About'
 import ValuesBenefits from './components/ValuesBenefits'
+import PhotographyGalleries from './components/PhotographyGalleries'
 import Footer from './components/Footer'
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <ServicesGrid />
         <About />
         <ValuesBenefits />
+        <PhotographyGalleries />
       </main>
       <Footer />
     </>
