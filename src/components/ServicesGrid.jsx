@@ -1,52 +1,93 @@
-import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
-import { Megaphone, Presentation, FileText, Share2, Palette, Sparkles, GraduationCap } from 'lucide-react'
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import {
+  Megaphone,
+  Presentation,
+  FileText,
+  Share2,
+  Palette,
+  Sparkles,
+  GraduationCap,
+} from "lucide-react";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 24 },
   visible: { opacity: 1, y: 0 },
-}
+};
 
 const corporativo = [
-  { icon: Share2, title: 'Gestión de Redes Sociales', description: 'Social Media con estrategia y contenido que conecta.' },
-  { icon: Palette, title: 'Branding e Identidad Visual', description: 'Una identidad coherente que refleja tu esencia.' },
-  { icon: Sparkles, title: 'Marketing Creativo', description: 'Campañas y piezas que destacan en el ruido digital.' },
-]
+  {
+    icon: Share2,
+    title: "Gestión de Redes Sociales",
+    description: "Social Media con estrategia y contenido que conecta.",
+  },
+  {
+    icon: Palette,
+    title: "Branding e Identidad Visual",
+    description: "Una identidad coherente que refleja tu esencia.",
+  },
+  {
+    icon: Sparkles,
+    title: "Marketing Creativo",
+    description: "Campañas y piezas que destacan en el ruido digital.",
+  },
+];
 
 const academicPlus = [
-  { icon: Megaphone, title: 'Diseño de Flyers', description: 'Material visual que comunica con claridad y estilo.' },
-  { icon: Presentation, title: 'Diapositivas de impacto', description: 'Presentaciones que captan la atención y transmiten tu mensaje.' },
-  { icon: FileText, title: 'Formatos profesionales', description: 'Documentos y formatos listos para entregas y proyectos.' },
-]
+  {
+    icon: Megaphone,
+    title: "Diseño de Flyers",
+    description: "Material visual que comunica con claridad y estilo.",
+  },
+  {
+    icon: Presentation,
+    title: "Diapositivas de impacto",
+    description:
+      "Presentaciones que captan la atención y transmiten tu mensaje.",
+  },
+  {
+    icon: FileText,
+    title: "Formatos profesionales",
+    description: "Documentos y formatos listos para entregas y proyectos.",
+  },
+];
 
 function ServiceCard({ icon: Icon, title, description, index, useGold }) {
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-40px' })
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-40px" });
   return (
     <motion.article
       ref={ref}
       variants={fadeIn}
       initial="hidden"
-      animate={inView ? 'visible' : 'hidden'}
+      animate={inView ? "visible" : "hidden"}
       transition={{ duration: 0.5, delay: index * 0.08 }}
-      className="p-6 rounded-2xl bg-white/90 backdrop-blur-md border border-cherry-red/10 shadow-soft hover:shadow-soft-lg hover:border-cherry-gold/40 transition-all duration-300"
+      className={`p-6 rounded-2xl border border-cherry-red/10 shadow-soft hover:shadow-soft-lg hover:border-cherry-gold/40 transition-all duration-300 ${
+        useGold ? "bg-white backdrop-blur-0" : "bg-white/90 backdrop-blur-md"
+      }`}
     >
       <div className="flex items-start gap-4">
-        <div className={`flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center ${useGold ? 'bg-cherry-gold/15 text-cherry-gold' : 'bg-cherry-red/10 text-cherry-red'}`}>
+        <div
+          className={`flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center ${useGold ? "bg-cherry-gold/15 text-cherry-gold" : "bg-cherry-red/10 text-cherry-red"}`}
+        >
           <Icon className="h-6 w-6" aria-hidden="true" strokeWidth={1.5} />
         </div>
         <div>
-          <h3 className="font-serif text-lg font-semibold text-gray-900">{title}</h3>
-          <p className="mt-1 text-gray-600 text-sm leading-relaxed tracking-wide">{description}</p>
+          <h3 className="font-serif text-lg font-semibold text-gray-900">
+            {title}
+          </h3>
+          <p className="mt-1 text-gray-600 text-sm leading-relaxed tracking-wide">
+            {description}
+          </p>
         </div>
       </div>
     </motion.article>
-  )
+  );
 }
 
 export default function ServicesGrid() {
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-60px' })
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
     <section
@@ -81,10 +122,17 @@ export default function ServicesGrid() {
           className="mb-20"
         >
           <div className="flex items-center gap-3 mb-2">
-            <div className="h-px flex-1 max-w-[60px] bg-cherry-gold" aria-hidden="true" />
-            <h3 className="font-serif text-xl font-semibold text-cherry-red">Segmento Corporativo</h3>
+            <div
+              className="h-px flex-1 max-w-[60px] bg-cherry-gold"
+              aria-hidden="true"
+            />
+            <h3 className="font-serif text-xl font-semibold text-cherry-red">
+              Segmento Corporativo
+            </h3>
           </div>
-          <p className="text-gray-600 mb-6 tracking-wide">Estrategia y creatividad para marcas que quieren trascender.</p>
+          <p className="text-gray-600 mb-6 tracking-wide">
+            Estrategia y creatividad para marcas que quieren trascender.
+          </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {corporativo.map((s, i) => (
               <ServiceCard key={s.title} {...s} index={i} useGold={false} />
@@ -101,12 +149,23 @@ export default function ServicesGrid() {
         >
           <div className="flex items-center gap-3 mb-2">
             <div className="w-10 h-10 rounded-xl bg-cherry-gold/15 flex items-center justify-center text-cherry-gold">
-              <GraduationCap className="h-5 w-5" aria-hidden="true" strokeWidth={1.5} />
+              <GraduationCap
+                className="h-5 w-5"
+                aria-hidden="true"
+                strokeWidth={1.5}
+              />
             </div>
-            <h3 className="font-serif text-xl font-semibold text-cherry-red">Academic Plus</h3>
+            <h3 className="font-serif text-xl font-semibold text-cherry-red">
+              Academic Plus
+            </h3>
           </div>
-          <p className="text-gray-600 mb-6 tracking-wide font-medium">¿Estudias? Nosotros elevamos tu presentación.</p>
-          <p className="text-gray-500 text-sm mb-8 tracking-wide">Piezas de diseño editorial para tu vida universitaria: flyers, diapositivas y formatos que marcan la diferencia.</p>
+          <p className="text-gray-600 mb-6 tracking-wide font-medium">
+            ¿Estudias? Nosotros elevamos tu presentación.
+          </p>
+          <p className="text-gray-500 text-sm mb-8 tracking-wide">
+            Piezas de diseño editorial para tu vida universitaria: flyers,
+            diapositivas y formatos que marcan la diferencia.
+          </p>
           <div className="grid sm:grid-cols-3 gap-6">
             {academicPlus.map((s, i) => (
               <ServiceCard key={s.title} {...s} index={i + 3} useGold={true} />
@@ -115,5 +174,5 @@ export default function ServicesGrid() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
