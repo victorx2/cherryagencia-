@@ -29,7 +29,7 @@ function ServiceCard({ icon: Icon, title, description, index, useGold }) {
       initial="hidden"
       animate={inView ? 'visible' : 'hidden'}
       transition={{ duration: 0.5, delay: index * 0.08 }}
-      className="p-6 rounded-2xl bg-white/80 backdrop-blur-md border border-white/60 shadow-soft hover:shadow-soft-lg hover:border-cherry-gold/30 transition-all duration-300"
+      className="p-6 rounded-2xl bg-white/90 backdrop-blur-md border border-cherry-red/10 shadow-soft hover:shadow-soft-lg hover:border-cherry-gold/40 transition-all duration-300"
     >
       <div className="flex items-start gap-4">
         <div className={`flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center ${useGold ? 'bg-cherry-gold/15 text-cherry-gold' : 'bg-cherry-red/10 text-cherry-red'}`}>
@@ -51,10 +51,9 @@ export default function ServicesGrid() {
   return (
     <section
       id="servicios"
-      className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-cream-white relative"
+      className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-section-cherry relative"
       aria-labelledby="servicios-heading"
     >
-      <div className="absolute inset-0 bg-cherry-gradient-soft pointer-events-none" aria-hidden="true" />
       <div className="relative max-w-6xl mx-auto" ref={ref}>
         <motion.h2
           id="servicios-heading"
@@ -98,7 +97,7 @@ export default function ServicesGrid() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="relative p-8 sm:p-10 rounded-3xl bg-white/70 backdrop-blur-md border border-cherry-gold/20 shadow-soft-lg overflow-hidden"
+          className="relative p-8 sm:p-10 rounded-3xl bg-white/90 backdrop-blur-md border border-cherry-red/10 shadow-soft-lg hover:border-cherry-gold/30 overflow-hidden transition-all duration-300"
         >
           <div className="absolute top-0 right-0 w-64 h-64 bg-cherry-gold/5 rounded-full blur-2xl -z-0" aria-hidden="true" />
           <div className="flex items-center gap-3 mb-2">

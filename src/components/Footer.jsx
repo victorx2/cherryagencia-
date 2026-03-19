@@ -1,23 +1,29 @@
-import { motion } from 'framer-motion'
-import { MapPin, Phone, Instagram } from 'lucide-react'
+import { motion } from "framer-motion";
+import { MapPin, Phone, Instagram } from "lucide-react";
 
 const FOOTER_LINKS = [
-  { href: '#servicios', label: 'Servicios' },
-  { href: '#nosotros', label: 'Nosotros' },
-  { href: '#beneficios', label: 'Beneficios' },
-  { href: '#auditoria', label: 'Auditoría Gratis' },
-]
+  { href: "#servicios", label: "Servicios" },
+  { href: "#nosotros", label: "Nosotros" },
+  { href: "#beneficios", label: "Beneficios" },
+  { href: "#auditoria", label: "Auditoría Gratis" },
+];
 
-const INSTAGRAM_URL = 'https://www.instagram.com/cherryagencia'
-const THREADS_URL = 'https://www.threads.net/@cherryagencia'
-const PHONE_1 = '0424-3363648'
-const PHONE_1_LINK = 'tel:+584243363648'
-const PHONE_2 = '+58 412-8730210'
-const PHONE_2_LINK = 'tel:+584128730210'
+const INSTAGRAM_URL = "https://www.instagram.com/cherryagencia";
+const THREADS_URL = "https://www.threads.net/@cherryagencia";
+const PHONE_1 = "0424-3363648";
+const PHONE_1_LINK = "tel:+584243363648";
+const PHONE_2 = "+58 412-8730210";
+const PHONE_2_LINK = "tel:+584128730210";
 
 export default function Footer() {
   return (
-    <footer className="bg-cherry-gradient text-white py-16 px-4 sm:px-6 lg:px-8" role="contentinfo">
+    <footer
+      className="text-white py-16 px-4 sm:px-6 lg:px-8"
+      style={{
+        background: 'linear-gradient(135deg, #600018 0%, #800020 100%)',
+      }}
+      role="contentinfo"
+    >
       <div className="max-w-6xl mx-auto">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand */}
@@ -28,10 +34,14 @@ export default function Footer() {
               viewport={{ once: true }}
               className="flex items-center gap-2 mb-4"
             >
-              <svg className="h-9 w-9 text-white" viewBox="0 0 40 40" fill="currentColor" aria-hidden="true">
-                <path d="M20 6c-2.5 5-7.5 10-12.5 12.5 2.5 5 7.5 7.5 12.5 7.5s10-2.5 12.5-7.5C27.5 16 22.5 11 20 6zm0 5c1.25 2.5 3.75 5 6.25 6.25-1.25 2.5-3.75 3.75-6.25 3.75s-5-1.25-6.25-3.75C16.25 16 18.75 13.5 20 11z" />
-                <circle cx="20" cy="22" r="7.5" />
-              </svg>
+              <img
+                src="/logo-cherry.jpg"
+                alt=""
+                className="h-10 w-10 object-contain rounded-lg"
+                width={40}
+                height={40}
+                aria-hidden="true"
+              />
               <span className="font-serif text-xl font-semibold">Cherry</span>
             </motion.div>
             <p className="text-white/90 text-sm">
@@ -41,7 +51,9 @@ export default function Footer() {
 
           {/* Enlaces */}
           <nav aria-label="Enlaces del sitio" className="lg:col-span-1">
-            <h3 className="font-serif font-semibold text-white mb-4">Enlaces</h3>
+            <h3 className="font-serif font-semibold text-white mb-4">
+              Enlaces
+            </h3>
             <ul className="space-y-2">
               {FOOTER_LINKS.map((link) => (
                 <li key={link.href}>
@@ -58,10 +70,15 @@ export default function Footer() {
 
           {/* Contacto */}
           <div className="lg:col-span-2">
-            <h3 className="font-serif font-semibold text-white mb-4">Contacto</h3>
+            <h3 className="font-serif font-semibold text-white mb-4">
+              Contacto
+            </h3>
             <ul className="space-y-3 text-white/90">
               <li className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                <MapPin
+                  className="h-5 w-5 flex-shrink-0 mt-0.5"
+                  aria-hidden="true"
+                />
                 <span>Maracay, Edo. Aragua, Venezuela</span>
               </li>
               <li>
@@ -112,9 +129,10 @@ export default function Footer() {
           viewport={{ once: true }}
           className="mt-12 pt-8 border-t border-white/20 text-center text-white/80 text-sm"
         >
-          &copy; {new Date().getFullYear()} Cherry Agencia Creativa. Todos los derechos reservados.
+          &copy; {new Date().getFullYear()} Cherry Agencia Creativa. Todos los
+          derechos reservados.
         </motion.div>
       </div>
     </footer>
-  )
+  );
 }

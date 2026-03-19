@@ -32,11 +32,10 @@ export default function About() {
   return (
     <section
       id="nosotros"
-      className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-cream-white relative"
+      className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-section-cherry relative"
       aria-labelledby="nosotros-heading"
       ref={ref}
     >
-      <div className="absolute inset-0 bg-cherry-gradient-soft pointer-events-none" aria-hidden="true" />
       <div className="relative max-w-4xl mx-auto">
         <motion.h2
           id="nosotros-heading"
@@ -91,7 +90,7 @@ export default function About() {
               initial={{ opacity: 0, y: 16 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: 0.25 + i * 0.06 }}
-              className="p-6 rounded-2xl bg-white/80 backdrop-blur-md border border-white/60 shadow-soft hover:shadow-soft-lg hover:border-cherry-gold/20 transition-all duration-300"
+              className="p-6 rounded-2xl bg-white/90 backdrop-blur-md border border-cherry-red/10 shadow-soft hover:shadow-soft-lg hover:border-cherry-gold/40 transition-all duration-300"
             >
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-cherry-gold/15 flex items-center justify-center text-cherry-gold">
