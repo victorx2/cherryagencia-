@@ -97,9 +97,8 @@ export default function ServicesGrid() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="relative p-8 sm:p-10 rounded-3xl bg-white/90 backdrop-blur-md border border-cherry-red/10 shadow-soft-lg hover:border-cherry-gold/30 overflow-hidden transition-all duration-300"
+          className="relative p-8 sm:p-10 rounded-3xl bg-white border border-cherry-red/10 shadow-soft-lg hover:border-cherry-gold/30 overflow-hidden transition-all duration-300"
         >
-          <div className="absolute top-0 right-0 w-64 h-64 bg-cherry-gold/5 rounded-full blur-2xl -z-0" aria-hidden="true" />
           <div className="flex items-center gap-3 mb-2">
             <div className="w-10 h-10 rounded-xl bg-cherry-gold/15 flex items-center justify-center text-cherry-gold">
               <GraduationCap className="h-5 w-5" aria-hidden="true" strokeWidth={1.5} />
