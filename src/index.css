@@ -27,3 +27,9 @@
   pointer-events: none;
   mix-blend-mode: overlay;
 }
+
+/* Oculta la barra de herramientas de Vercel en producción */
+#feedback-toolbar,
+[data-geist-button][aria-label="Vercel Toolbar"] {
+  display: none !important;
+}
