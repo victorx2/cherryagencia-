@@ -51,7 +51,7 @@ export default function ServicesGrid() {
   return (
     <section
       id="servicios"
-      className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-section-cherry relative"
+      className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-cream-white relative"
       aria-labelledby="servicios-heading"
     >
       <div className="relative max-w-6xl mx-auto" ref={ref}>
