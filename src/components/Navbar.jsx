@@ -7,6 +7,7 @@ const navLinks = [
   { href: "#nosotros", label: "Nosotros" },
   { href: "#beneficios", label: "Beneficios" },
   { href: "#galerias", label: "Galerías" },
+  { href: "#videos", label: "Videos" },
 ];
 
 function CherryLogo({ className = "h-10 w-10", ...props }) {

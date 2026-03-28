@@ -1,10 +1,11 @@
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import ServicesGrid from './components/ServicesGrid'
-import About from './components/About'
-import ValuesBenefits from './components/ValuesBenefits'
-import PhotographyGalleries from './components/PhotographyGalleries'
-import Footer from './components/Footer'
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import ServicesGrid from "./components/ServicesGrid";
+import About from "./components/About";
+import ValuesBenefits from "./components/ValuesBenefits";
+import PhotographyGalleries from "./components/PhotographyGalleries";
+import VideoShowcase from "./components/VideoShowcase";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -22,10 +23,11 @@ function App() {
         <About />
         <ValuesBenefits />
         <PhotographyGalleries />
+        <VideoShowcase />
       </main>
       <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

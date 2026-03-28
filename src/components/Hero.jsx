@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { MessageCircle, LayoutGrid } from "lucide-react";
+import { featuredCherryVideo } from "../data/cherryVideos";
 
 const container = {
   hidden: { opacity: 0 },
@@ -22,7 +23,8 @@ export default function Hero() {
     <section
       className="relative min-h-screen flex items-center pt-20 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden hero-grain"
       style={{
-        background: 'linear-gradient(105deg, #500014 0%, #450012 25%, #2d000c 50%, #1a0008 75%, #0a0a0a 100%)',
+        background:
+          "linear-gradient(105deg, #500014 0%, #450012 25%, #2d000c 50%, #1a0008 75%, #0a0a0a 100%)",
       }}
       aria-labelledby="hero-heading"
     >
@@ -30,7 +32,8 @@ export default function Hero() {
       <div
         className="absolute inset-0 pointer-events-none -z-0"
         style={{
-          background: 'radial-gradient(ellipse 100% 80% at 20% 50%, rgba(80,0,20,0.4) 0%, transparent 55%)',
+          background:
+            "radial-gradient(ellipse 100% 80% at 20% 50%, rgba(80,0,20,0.4) 0%, transparent 55%)",
         }}
         aria-hidden="true"
       />
@@ -107,10 +110,29 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        <div
-          className="hidden lg:block w-80 flex-shrink-0"
-          aria-hidden="true"
-        />
+        <div className="w-full max-w-lg mx-auto lg:mx-0 lg:max-w-md xl:max-w-lg flex-shrink-0">
+          <div className="relative aspect-video rounded-2xl overflow-hidden border border-white/25 shadow-2xl bg-black/40 ring-1 ring-white/10">
+            <video
+              className="absolute inset-0 w-full h-full object-cover"
+              src={featuredCherryVideo.src}
+              controls
+              playsInline
+              preload="metadata"
+              title={featuredCherryVideo.title}
+            >
+              Tu navegador no reproduce vídeo HTML5.
+            </video>
+          </div>
+          <p className="mt-3 text-center lg:text-left text-xs text-white/60 tracking-wide">
+            {featuredCherryVideo.title} · más abajo, todos los clips en{" "}
+            <a
+              href="#videos"
+              className="text-cherry-gold hover:text-white underline-offset-2 hover:underline focus:outline-none focus:ring-2 focus:ring-cherry-gold rounded"
+            >
+              Videos
+            </a>
+          </p>
+        </div>
       </div>
     </section>
   );

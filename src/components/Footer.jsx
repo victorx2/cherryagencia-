@@ -6,6 +6,7 @@ const FOOTER_LINKS = [
   { href: "#nosotros", label: "Nosotros" },
   { href: "#beneficios", label: "Beneficios" },
   { href: "#galerias", label: "Galerías" },
+  { href: "#videos", label: "Videos" },
   { href: "#auditoria", label: "Auditoría Gratis" },
 ];
 
