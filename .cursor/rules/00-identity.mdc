@@ -1,0 +1,14 @@
+---
+description: Identidad Cherry Agencia. Producto cultura e ingeniería. No inventar marca ni paleta.
+alwaysApply: true
+---
+
+# Identidad
+
+- Marca = **Cherry Agencia**. Cara pública = **Raizel**. No mencionar a Irma. Prohibido inventar NORTE, UMBRAL u otra marca.
+- Producto = landing **cultura e ingeniería** (oficio corporativo-creativo).
+- Paleta y tipo solo los de `DESIGN.md` (campo vino de la carta + ivory/gold).
+- Copy y narrativa según `docs/BRIEF.md`.
+- Fotos según `docs/ASSETS.md` y `docs/ORGANIZACION.md`.
+- Hero = Raizel, WhatsApp 17/8/2026 5:58 (`Foto mía` / `Trabajando`). No gorra PAZ. No stand/pantalla CMQA en LCP. Ver `docs/HERO.md`.
+- Esta pasada: documentación. No crear la landing ni `package.json`.

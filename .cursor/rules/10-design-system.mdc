@@ -1,0 +1,16 @@
+---
+description: Obligatorio respetar DESIGN.md. No inventar tokens, glows ni tipografías.
+alwaysApply: true
+---
+
+# Design system
+
+Leer `DESIGN.md` antes de cualquier UI.
+
+- Fondos `--ink` / `--surface` / `--elevated`.
+- Acento `--primary` `#500014` (carta). Campo `--field`. Gold solo hairlines.
+- Prohibido naranja millonario como CTA o glow.
+- Serif = display. Sans = UI, body, botones.
+- Cards = bento oscuro, borde `--line`, glow vino discreto.
+- Spacing solo la escala 4–160. Motion 300–700ms, `prefers-reduced-motion`.
+- Si falta un patrón, reutilizar uno de `DESIGN.md` antes de inventar.

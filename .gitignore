@@ -1,0 +1,22 @@
+node_modules/
+dist/
+dist-ssr/
+.env
+.env.*
+*.local
+
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Fuentes crudas en la raíz: ya van exportadas en web/public
+/*.jpeg
+/*.jpg
+/*.JPG
+/*.png
+/*.mp4
+/*.MP4
+/*.pdf
+/*.webp
+/*.svg
