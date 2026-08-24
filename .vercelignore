@@ -1,0 +1,7 @@
+fuente/
+.cursor/
+Descargas/
+*.MOV
+*.mov
+agent-transcripts/
+node_modules/

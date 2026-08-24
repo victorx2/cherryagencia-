@@ -34,11 +34,11 @@ export function Hero() {
 
       <div className="hero-figure">
         <picture>
-          <source type="image/webp" srcSet="/images/hero-raizel.webp" />
+          <source type="image/webp" srcSet="/images/hero-raizel-set.webp" />
           <img
-            src="/images/hero-raizel.png"
+            src="/images/hero-raizel-set.webp"
             alt="Raizel Bolivar trabajando con gimbal"
-            width={909}
+            width={983}
             height={1280}
             fetchPriority="high"
           />

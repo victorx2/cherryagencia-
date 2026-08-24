@@ -128,7 +128,7 @@ background:
 
 Glow discreto. Si parece neón de discoteca, bajar opacidad.
 
-Hero (primer bloque): mancha `radial-gradient` del `--wine` detrás de la figura, no SVG de terceros ni `#ff5500`. Foto **full-bleed** (`object-fit: cover`, 100% del hero), opacity ~0.5, `luminosity`, fade inferior (no marco, no óvalo). Copy y CTA encima, legibles. Ticker por encima de la figura.
+Hero (primer bloque): mancha `radial-gradient` del `--wine` detrás de la figura (equivalente propio al “blur” de referencia; no SVG ajeno). Capas: glow → ticker → retrato centrado → copy y CTA encima. En móvil, foto a escena. En escritorio, `contain` (máx. ~44rem) para no aplastar el retrato. Overlay ink inferior. CTA pill cherry, no naranja.
 
 **Puntos:** un solo retículo `--dots` a `--dot-cell` 18px, champagne. Vive en atmósfera y gira lento (órbita 72s, solo `transform`). Las cintas no pintan otro grid: dejan ver el mismo. Nunca un segundo retículo en el hero. No mesh carbon ni nodos naranja.
 
@@ -263,8 +263,9 @@ Ritmo de una cinta ancha (aire, full-bleed, título a la izquierda). Piel de la 
 - Hairline gold 1px que aparece de izquierda a derecha en hover de pilares
 - Pilares de Qué hacemos: cada uno un lavado de marca (gold, rose, champagne, acero) sobre vino. En hover el lavado sube a opacidad 1 (500ms). No teal/verde de plantilla, no card blanca, no Poppins.
 - Carril de cartas (`CardRail`): mazo solapado (margen negativo + sombra ink a la izquierda), centrado con `safe center` cuando cabe. En reposo, brillo ~70%. Hover/foco: `translateY` (≤1.35rem), z-index al frente, brillo 1, lavado vino. Disco de paso = círculo `--primary` con anillo gold, no naranja millonario. Sin Swiper, sin mesh carbon, sin círculos #ff5500.
+- Oficio largo (`StudioRail` / `.snap-rail`): diseños, diapositivas, sesiones y vídeos en **una fila** con scroll horizontal y snap. Flechas hairline gold. Sin autoplay, sin loop de atención. El visitante recorre el mazo; no una grilla de 20 filas.
 
-Vídeos (`#videos`): cards 9/16, `--elevated`, play pill `--field`. Sin autoplay con sonido. Un vídeo a la vez.
+Vídeos (`#videos`): cards 9/16 en el mismo carril snap. Play pill `--field`. Sin autoplay con sonido. Un vídeo a la vez.
 
 Showreel (`#presentacion`): bajo la grilla de `#videos`. Marco cine (bezel ink, hairline gold, sombra). 16/9, no full-bleed. Loop mudo; **Escuchar el vídeo**. No clonar RIM.
 

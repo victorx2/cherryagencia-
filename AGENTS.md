@@ -2,7 +2,7 @@
 
 Manual principal para cualquier agente de IA que trabaje en este repositorio.
 
-Esta pasada del proyecto es **solo documentación**. No implementar la landing, no crear Vite/React/HTML, no instalar paquetes.
+La landing **ya existe** en `web/`. El crudo vive en `fuente/`. Los títulos del oficio deben coincidir con esas carpetas, no con “Diseño V” ni “Diapositivas II”.
 
 ---
 
@@ -10,7 +10,7 @@ Esta pasada del proyecto es **solo documentación**. No implementar la landing, 
 
 **Marca:** Cherry Agencia. Cara pública: **Raizel Bolivar**. No mencionar a Irma en la landing. No inventar otra marca (NORTE, UMBRAL, etc.).
 
-**Qué se construye (más adelante):** una landing premium de **cultura e ingeniería** — corporativo-creativa, editorial, cinematográfica.
+**Qué es:** una landing premium de **cultura e ingeniería** — corporativo-creativa, editorial, cinematográfica. App: `web/` (Vite + React + TypeScript + Tailwind).
 
 **Para quién:** marcas, instituciones y personas que necesitan comunicación con oficio: eventos, contenido, identidad visual, y piezas que unen rigor técnico con sensibilidad cultural.
 
@@ -55,50 +55,48 @@ El agente debe:
 - No copiar las webs de referencia
 - No inventar testimonios, precios reales ni resultados
 - No usar naranja millonario como acento
-- Hero = Raizel, lote WhatsApp 5:58 `Foto mía` / `Trabajando` (`docs/HERO.md`); no PAZ ni stand CMQA
+- Hero = Raizel trabajando con gimbal (`docs/HERO.md`); LCP = foto 23/8 con marca Cherry. No PAZ, no stand CMQA, no premiación de jornada
 
 ---
 
-## Stack previsto (no crear ahora)
-
-Cuando exista implementación:
+## Stack (ya en `web/`)
 
 - Vite + React + TypeScript + Tailwind CSS
-- Datos editables en `src/data/`
-- Un componente por sección de la narrativa
+- Datos editables en `web/src/data/` (títulos de oficio en `portfolio.ts`)
+- Un componente por sección
 - Motion discreto (300–700ms); `prefers-reduced-motion`
-- Imágenes locales según `docs/ASSETS.md` y `docs/HERO.md`, exportadas a `public/images/` con nombres semánticos
-- Primera rebanada de UI: tokens + Navbar + **Hero de Raizel**; después el resto
+- Crudo en `fuente/`; publicado en `web/public/images/` y `web/public/videos/`
+- Sin navbar (pedido). El footer lleva la navegación. Hero = Raizel.
 
 ---
 
-## Narrativa de secciones (especificación)
+## Narrativa de secciones
 
-No implementar todavía. Orden de conversión:
+Orden de conversión (home actual):
 
 ```text
 HERO
 → QUÉ HACEMOS (valor)
-→ OFICIO (Cultura / Ingeniería / Salud / Set)
-→ FOTOGRAFÍA + VÍDEOS (prueba)
+→ PORTAFOLIO (enlaces: Diseños / Fotos / Vídeos)
 → ESENCIA (Raizel)
 → CÓMO EMPEZAMOS + CTA
-→ CARTA (bio, experiencia, formación)
-→ FOOTER (contacto)
+→ CARTA
+→ DISEÑOS + FOTOS + VÍDEOS (abajo, no en el primer scroll)
+→ FOOTER
 ```
 
 Mejorar esta estructura solo si la alternativa es más clara, premium y original. No copiar las secciones literales de millonariosconscientes.co.
 
-Componentes futuros (nombres): `Navbar`, `Hero`, `IntroSection`, `Pillars`, `PortfolioBento`, `Videos`, `Benefits`, `Journey`, `Testimonials`, `Events`, `Membership`, `Transformation`, `FAQ`, `FinalCTA`, `Footer`.
+Componentes en uso: `Hero`, `Pillars`, `WorkLinks`, `Essence`, `Benefits`, `Profile`, `PortfolioBento`, `Galleries`, `Videos`, `Footer`. No reponer navbar salvo que se pida.
 
 ---
 
-## Reglas de código (cuando exista código)
+## Reglas de código
 
-- Estructura: `src/components/`, `src/data/`, `src/styles/` (o tokens en Tailwind)
+- Estructura: `web/src/components/`, `web/src/data/`
 - Naming: PascalCase componentes, camelCase utils, kebab-case archivos de imagen
 - Componentes pequeños, un propósito, props tipadas
-- Copy y planes en `src/data/`, no hardcodeados en JSX salvo estructura del hero
+- Copy y series en `web/src/data/`, no hardcodeados en JSX salvo estructura del hero
 - Assets: no usar fotos de las webs de referencia; usar el inventario local
 - Estilos: solo tokens de `DESIGN.md`
 - Responsive: mobile-first; grids a una columna en móvil
@@ -147,10 +145,10 @@ Cualquier implementación debe ser una solución propia: identidad, textos, foto
 
 ---
 
-## Prohibido en esta pasada
+## Coherencia de nombres
 
-- Crear `package.json`, `index.html`, `src/` de aplicación, o la landing
-- Instalar dependencias
-- Generar componentes React
+Un encargo tiene **un nombre** en `fuente/`, en `docs/ASSETS.md` y en `web/src/data/portfolio.ts`.
 
-La documentación es el sistema operativo. La web se construye en una pasada posterior, leyendo estos archivos primero.
+Prohibido volver a títulos romanos genéricos (`Diseño V`, `Diapositivas II`). El mapa está en `docs/ORGANIZACION.md`.
+
+No dejar JPEG sueltos en la raíz. No clonar las webs de referencia. No inventar testimonios ni marcas.

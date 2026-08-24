@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { videos, type StudioVideo } from "../data/videos";
 import { Showreel } from "./Showreel";
+import { StudioRail } from "./StudioRail";
 import { Section } from "./ui/Section";
 
 function VideoCard({
@@ -62,11 +63,12 @@ function VideoCard({
 
 export function Videos() {
   const [playingId, setPlayingId] = useState<string | null>(null);
+  const clips = [...videos.items, ...videos.recent];
 
   return (
     <Section id="videos" kicker={videos.kicker} title={videos.title} lead={videos.lead}>
-      <div className="video-grid">
-        {videos.items.map((item) => (
+      <StudioRail label={videos.title} count={clips.length}>
+        {clips.map((item) => (
           <VideoCard
             key={item.id}
             item={item}
@@ -74,7 +76,7 @@ export function Videos() {
             onPlay={() => setPlayingId(item.id)}
           />
         ))}
-      </div>
+      </StudioRail>
       <Showreel />
     </Section>
   );

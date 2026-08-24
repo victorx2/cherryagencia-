@@ -10,5 +10,5 @@ alwaysApply: true
 - Paleta y tipo solo los de `DESIGN.md` (campo vino de la carta + ivory/gold).
 - Copy y narrativa según `docs/BRIEF.md`.
 - Fotos según `docs/ASSETS.md` y `docs/ORGANIZACION.md`.
-- Hero = Raizel, WhatsApp 17/8/2026 5:58 (`Foto mía` / `Trabajando`). No gorra PAZ. No stand/pantalla CMQA en LCP. Ver `docs/HERO.md`.
-- Esta pasada: documentación. No crear la landing ni `package.json`.
+- Hero = Raizel trabajando (gimbal). LCP actual: foto 23/8/2026 22:08 con marca Cherry. No gorra PAZ. No stand/pantalla CMQA ni premiación de jornada en LCP. Ver `docs/HERO.md`.
+- Landing en `web/`. Crudo en `fuente/`. Títulos de oficio = nombre de carpeta, no romanos (`Diseño V`). Ver `docs/ORGANIZACION.md`.

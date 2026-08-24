@@ -9,7 +9,7 @@ import numpy as np
 from PIL import Image, ImageFilter
 
 ROOT = Path(r"c:\Users\pc\Desktop\Nueva carpeta")
-SRC = ROOT / "IMG_0822.JPG.jpeg"
+SRC = ROOT / "fuente" / "fotos" / "raizel" / "gimbal-blanco.jpeg"
 OUT_DIR = ROOT / "web" / "public" / "images"
 WHITE = np.array([254.0, 254.0, 254.0])
 

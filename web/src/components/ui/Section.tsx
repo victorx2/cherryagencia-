@@ -21,7 +21,7 @@ export function Section({ id, kicker, title, lead, children }: SectionProps) {
           ".section-kicker, .section-title, .section-lead",
         );
         const items = root.current?.querySelectorAll(
-          ".pillar, .value-card, .perk, .gallery-card, .video-card, .cinema, .essence-photo, .essence-quote, .bento-card, .btn-row",
+          ".pillar, .value-card, .perk, .snap-rail, .cinema, .essence-photo, .essence-quote, .bento-card, .btn-row, .work-link",
         );
 
         if (head?.length) {

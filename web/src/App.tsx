@@ -9,6 +9,7 @@ import { Pillars } from "./components/Pillars";
 import { Profile } from "./components/Profile";
 import { PortfolioBento } from "./components/PortfolioBento";
 import { Videos } from "./components/Videos";
+import { WorkLinks } from "./components/WorkLinks";
 
 export default function App() {
   return (
@@ -24,12 +25,13 @@ export default function App() {
       <main id="main">
         <Hero />
         <Pillars />
-        <PortfolioBento />
-        <Galleries />
-        <Videos />
+        <WorkLinks />
         <Essence />
         <Benefits />
         <Profile />
+        <PortfolioBento />
+        <Galleries />
+        <Videos />
       </main>
       <Footer />
     </>

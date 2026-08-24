@@ -10,13 +10,21 @@ Thumbs.db
 .idea/
 .vscode/
 
-# Fuentes crudas en la raíz: ya van exportadas en web/public
+# Medios sueltos en la raíz. El archivo crudo vive en fuente/
 /*.jpeg
 /*.jpg
 /*.JPG
 /*.png
 /*.mp4
 /*.MP4
+/*.mov
+/*.MOV
 /*.pdf
 /*.webp
 /*.svg
+
+.vercel
+Descargas/
+fuente/
+*.MOV
+*.mov

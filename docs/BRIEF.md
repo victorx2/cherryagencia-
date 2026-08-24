@@ -49,25 +49,26 @@ El usuario debe entender rápido: qué es → para quién → qué obtiene → p
 
 ---
 
-## Secciones futuras (no implementar ahora)
+## Secciones (home actual)
 
-| Sección | Intención |
-|---|---|
-| Navbar | Logo Cherry, enlaces mínimos, CTA `UNIRME` o `HABLAR` |
-| Hero | **Raizel, lote 5:58 Foto mía / Trabajando.** `docs/HERO.md`. No PAZ. No stand CMQA. |
-| Valor | Qué une cultura e ingeniería en el oficio de Cherry |
-| Cultura | Piezas, eventos, deporte, editorial |
-| Ingeniería | Precisión, sistemas, metáfora del rodamiento / oficio técnico |
-| Oficio / método | Cómo se trabaja (pasos, no hype) |
-| Portfolio bento | Grid irregular con fotos locales |
-| Beneficios | Qué obtiene quien trabaja con Cherry |
-| Prueba | Eventos, set, retratos — no testimonios inventados |
-| Planes | 2–3 opciones; precio = `[PRECIO]` |
-| FAQ | Editable en datos |
-| CTA final | Foto de comunidad/equipo en acción |
-| Footer | Logo, links, legal, redes |
+Sin navbar. Contacto y enlaces en el footer.
 
-CTA primario con mesura: Hero, Planes, Transformación/cierre. El resto puede ser ghost o scroll.
+| Sección | Componente | Intención |
+|---|---|---|
+| Hero | `Hero` | Raizel, lote 5:58. `docs/HERO.md`. No PAZ. No stand CMQA. |
+| Qué hacemos | `Pillars` | Valor: acompañamiento, redes, identidad, campañas |
+| Portafolio | `WorkLinks` | Tres enlaces: Diseños / Fotografía / Vídeos |
+| Esencia | `Essence` | Raizel. Oficio, no ruido |
+| Cómo empezamos | `Benefits` | Briefing → oficio → entrega + perks |
+| Carta | `Profile` | Bio y dirección de marca |
+| Oficio | `PortfolioBento` | Series con **título descriptivo** (`docs/ORGANIZACION.md`) |
+| Fotografía | `Galleries` | Pixieset + Raizel en set |
+| Vídeos | `Videos` | Play al clic |
+| Footer | `Footer` | Teléfonos, mail, Instagram, carta |
+
+CTA primario con mesura: Hero y “Cómo empezamos”. El resto, scroll.
+
+Títulos de series: `web/src/data/portfolio.ts`. Deben coincidir con `fuente/`.
 
 ---
 
@@ -113,7 +114,7 @@ No usar el copy exacto de la web de referencia.
 6. ¿Desde qué países se puede trabajar?
 7. ¿Hace falta experiencia previa?
 
-Respuestas cortas, honestas, sin relleno. Se rellenan en `src/data/faq.ts` cuando exista código.
+Respuestas cortas, honestas, sin relleno. Si hay FAQ: `web/src/data/`.
 
 ---
 

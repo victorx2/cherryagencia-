@@ -1,8 +1,8 @@
-# ORGANIZACION.md — Cómo se ordena este proyecto (sin código)
+# ORGANIZACION.md — Cómo se ordena este proyecto
 
-**Sí: Cursor es el lugar correcto** para esta fase. Aquí vive la fuente de verdad para cualquier agente (y para ti): marca, paleta, hero, fotos, lo prohibido.
+Cursor es la fuente de verdad: marca, paleta, hero, fotos, nombres del oficio.
 
-No hace falta código todavía. No hace falta Elementor para organizar. WhatsApp es solo la bandeja de donde salieron las fotos.
+WhatsApp es solo la bandeja de origen. Elementor no es este Design System.
 
 ---
 
@@ -14,7 +14,7 @@ No hace falta código todavía. No hace falta Elementor para organizar. WhatsApp
 | **WhatsApp** (grupo Cherry Agencia, 17/8/2026) | Origen de fotos y pies: `Foto mía`, `Trabajando`, `Diseño` | Identidad visual ni copy final |
 | **Elementor / WordPress** (pestaña “Edit Inicio”) | Sitio actual en producción, otra pista | No es este Design System. No mezclar instrucciones |
 
-Cuando más adelante se construya la landing en Cursor (Vite), se copian fotos **desde este folder** a `public/images/`. Hasta entonces los JPEG se quedan en la raíz con el nombre de WhatsApp.
+La landing vive en `web/`. Los JPEG y vídeos crudos viven en `fuente/`, con nombre corto. Lo que se publica se exporta a `web/public/images/` y `web/public/videos/`.
 
 ---
 
@@ -22,20 +22,66 @@ Cuando más adelante se construya la landing en Cursor (Vite), se copian fotos *
 
 ```text
 Nueva carpeta/
-  AGENTS.md                 ← manual del agente
-  DESIGN.md                 ← tokens Cherry (vino, no naranja)
-  docs/
-    ORGANIZACION.md         ← este archivo
-    BRIEF.md                ← producto y copy
-    HERO.md                 ← Raizel + gimbal, lote 5:58
-    ASSETS.md               ← inventario y roles
-  web/public/docs/carta-raizel.pdf  ← carta de Raizel, enlace público
-  .cursor/rules/            ← siempre activo
-  .cursor/skills/           ← se dispara al diseñar/redactar
-  WhatsApp Image 2026-08-17 at *.jpeg   ← crudo; no renombrar aún
+  AGENTS.md
+  DESIGN.md
+  docs/                     BRIEF, HERO, ASSETS, este archivo
+  web/                      landing Vite
+  fuente/
+    carta/                  carta-raizel.pdf
+    marca/                  isotipo y lockups Cherry
+    diapositivas/           obesidad, abundancia, tiempo, cierre…
+    disenos/                bremen, cmqa, sellos, cejas, monaco…
+    fotos/
+      raizel/               gimbal, set, lives
+      nestyuri/
+      eventos/              stand-cmqa
+    videos/                 presentacion, raizel-01…04
 ```
 
-**No existe todavía (y no crear ahora):** `package.json`, `src/`, `index.html`, `public/`.
+Nada de JPEG suelto en la raíz. Inventario y roles: `docs/ASSETS.md`.
+
+---
+
+## Nombres del oficio (crudo = web)
+
+Los ids y los WebP publicados no se renombran. Cambia el **título** que ve el visitante.
+
+| `fuente/` | Título en la web | Slug publicado |
+|---|---|---|
+| `diapositivas/obesidad` | Obesidad · cómo se trata | `slides-tratamiento` |
+| `diapositivas/abundancia` | Principios de abundancia | `slides-abundancia` |
+| `diapositivas/dinamica-tiempo` | Dinámica del tiempo | `slides-ii` |
+| `diapositivas/cierre-impresion` | Cierre e impresión | `slides-iv` |
+| `diapositivas/cmqa-compartir` | CMQA · compartir | `slides-v` |
+| `diapositivas/tips-rinones` | Tips para los riñones | `slides-vi` |
+| `diapositivas/cancer-mama` | Cáncer de mama | `slides-vii` |
+| `diapositivas/anzoategui` | Anzoátegui | `slides-viii` |
+| `fotos/nestyuri` | Carruseles y diapositivas | `work-nestyuri` |
+| `disenos/guia-estudio` | Guía de estudio | `diseno-guia` |
+| `disenos/curso-pestanas` | Curso de pestañas | `diseno-ii` |
+| `disenos/plato-saludable` | Plato saludable | `diseno-iii` |
+| `disenos/taller-rodamientos` | Taller de rodamientos | `diseno-iv` |
+| `disenos/sellos-mecanicos` | Sellos mecánicos | `diseno-v` |
+| `disenos/dia-corazon` | Día del corazón | `diseno-vi` |
+| `disenos/nestyuri-flyer` | Flyer Nestyuri | `diseno-vii` |
+| `disenos/rapid-express` | Rapid Express | `diseno-viii` |
+| `disenos/cejas` | Micropigmentación de cejas | `diseno-ix` |
+| `disenos/rosas-eternas` | Rosas eternas | `diseno-x` |
+| `disenos/cmqa` (jornadas) | CMQA · jornadas y sorteo | `diseno-xi` |
+| `disenos/cmqa` | CMQA | `work-cmqa` |
+| `disenos/bremen` | Bremen · sellos | `work-bremen` |
+| `disenos/rim-urbano` | RiM urbano | `work-rim-urbano` |
+| `disenos/monaco` | Circuit de Monaco | `work-monaco` |
+| `disenos/alfredo` | Alfredo Alexander | `work-alfredo` |
+| `disenos/isaias` | Isaias Mateo | `work-isaias` |
+| `disenos/bisturi` | Entre Bisturí | `work-bisturi` |
+| `fotos/raizel` (lote XV) | Raizel en set | `set-lets-talk` |
+| `fotos/raizel/gimbal-azul.jpeg` | Portada Raizel en set | `set-portada` |
+| `fotos/raizel/gimbal-cherry.jpeg` | Hero LCP | `hero-raizel-set` |
+
+Fotos de ella o de evento → `#galerias` / Raizel en set. Mónaco y Alfredo se quedan en **Diseño**.
+
+Editar títulos solo en `web/src/data/portfolio.ts`.
 
 ---
 
@@ -68,7 +114,9 @@ Textos exactos a respetar en docs:
 
 ---
 
-## Lotes del 17/8 (raíz del proyecto)
+## Lotes del 17/8 (histórico WhatsApp)
+
+Los archivos ya no están en la raíz. La hora del nombre original sigue siendo la pista.
 
 | Hora en el filename | Contenido típico | Rol |
 |---|---|---|
@@ -97,21 +145,15 @@ La foto **definitiva de LCP** se elige del pool hero (`docs/HERO.md`): gimbal + 
 
 ---
 
-## Organización futura (solo cuando haya implementación)
+## Dónde vive cada cosa
 
-No mover nada todavía. Plan de nombres:
+| Tipo | Carpeta |
+|---|---|
+| Crudo (JPEG, MP4, PDF) | `fuente/` |
+| Publicado (WebP, vídeo web) | `web/public/images/`, `web/public/videos/` |
+| Carta pública | `web/public/docs/carta-raizel.pdf` + copia en `fuente/carta/` |
 
-```text
-public/images/
-  hero-raizel.webp          ← 1 sola, LCP
-  raizel-trabajando-02.webp ← extra del lote 5:58
-  evento-cmqa-stand.webp
-  cultura-monaco.webp
-  ingenieria-magia.webp
-  editorial-rim.webp
-```
-
-`src/data/assets.ts` apuntará a esos paths. Los WhatsApp JPEG crudos pueden pasar a `assets-raw/` para no ensuciar `public/`.
+Hero LCP: `fuente/fotos/raizel/quirofano-gimbal.jpeg` → `web/public/images/`. Recorte con alfa: `gimbal-blanco.jpeg`. Stand CMQA: `fuente/fotos/eventos/stand-cmqa.jpeg` — no hero.
 
 ---
 
@@ -125,7 +167,7 @@ public/images/
 6. `docs/BRIEF.md`  
 7. Skills si toca UI o copy  
 
-**Esta pasada:** solo documentación. Cero Vite, cero HTML, cero Elementor desde aquí.
+Leer `docs/ASSETS.md` y `docs/HERO.md` antes de tocar fotos.
 
 ---
 
@@ -134,6 +176,6 @@ public/images/
 - Rules en `.cursor/rules` con `alwaysApply` → no se olvida la marca  
 - Skills en `.cursor/skills` → se invocan al diseñar  
 - Docs en `docs/` → humanos y agentes leen lo mismo  
-- Fotos en la raíz con nombre WhatsApp → trazabilidad 17/8 5:58  
+- Crudo en `fuente/`, publicado en `web/public/`  
 
-Eso es el sistema operativo. La web se construye **después**, leyendo esto primero.
+No volver a dejar JPEG sueltos en la raíz.

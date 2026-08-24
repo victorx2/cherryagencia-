@@ -1,4 +1,4 @@
-export type StudioKind = "cultura" | "ingenieria" | "salud" | "set";
+export type StudioKind = "slides" | "diseno";
 
 export type DesignPiece = {
   src: string;
@@ -14,132 +14,247 @@ export type DesignLine = {
   pieces: DesignPiece[];
 };
 
+export type PhotoAlbum = {
+  id: string;
+  title: string;
+  kind: string;
+  cover: string;
+  href?: string;
+  pieces: DesignPiece[];
+};
+
 export const studioKinds: { id: StudioKind; label: string }[] = [
-  { id: "cultura", label: "Cultura" },
-  { id: "ingenieria", label: "Ingeniería" },
-  { id: "salud", label: "Salud" },
-  { id: "set", label: "En set" },
+  { id: "slides", label: "Carruseles y diapositivas" },
+  { id: "diseno", label: "Diseño" },
+];
+
+function lot(
+  slug: string,
+  count: number,
+  label: string,
+): DesignPiece[] {
+  return Array.from({ length: count }, (_, index) => {
+    const n = String(index + 1).padStart(2, "0");
+    return {
+      src: `/images/${slug}-${n}.webp`,
+      alt: `${label}, pieza ${index + 1}`,
+      title: `Pieza ${index + 1}`,
+    };
+  });
+}
+
+const nestyuriPieces: DesignPiece[] = [
+  {
+    src: "/images/work-nestyuri-1.webp",
+    alt: "Septiembre, un mes para la esperanza",
+    title: "Mes para la esperanza",
+  },
+  {
+    src: "/images/work-nestyuri-2.webp",
+    alt: "¿Por qué hablamos de esto?",
+    title: "¿Por qué hablamos de esto?",
+  },
+  {
+    src: "/images/work-nestyuri-4.webp",
+    alt: "La prevención empieza con la información",
+    title: "Prevención e información",
+  },
+  {
+    src: "/images/work-nestyuri-5.webp",
+    alt: "Campaña de prevención Nestyuri Briceño",
+    title: "Campaña",
+  },
+  {
+    src: "/images/work-nestyuri-7.webp",
+    alt: "La prevención empieza contigo",
+    title: "Empieza contigo",
+  },
 ];
 
 export const designLines: DesignLine[] = [
   {
-    id: "nestyuri",
-    title: "Nestyuri Briceño",
-    kind: "salud",
+    id: "carruseles",
+    title: "Carruseles y diapositivas",
+    kind: "slides",
     cover: "/images/work-nestyuri-1.webp",
+    pieces: nestyuriPieces,
+  },
+  {
+    id: "slides-tratamiento",
+    title: "Obesidad · cómo se trata",
+    kind: "slides",
+    cover: "/images/slides-tratamiento-01.webp",
+    pieces: lot("slides-tratamiento", 6, "Carrusel de obesidad"),
+  },
+  {
+    id: "slides-abundancia",
+    title: "Principios de abundancia",
+    kind: "slides",
+    cover: "/images/slides-abundancia-01.webp",
+    pieces: lot("slides-abundancia", 9, "Principios de abundancia"),
+  },
+  {
+    id: "slides-ii",
+    title: "Dinámica del tiempo",
+    kind: "slides",
+    cover: "/images/slides-ii-01.webp",
+    pieces: lot("slides-ii", 9, "Dinámica del tiempo"),
+  },
+  {
+    id: "slides-iv",
+    title: "Cierre e impresión",
+    kind: "slides",
+    cover: "/images/slides-iv-01.webp",
+    pieces: lot("slides-iv", 10, "Cierre e impresión"),
+  },
+  {
+    id: "slides-v",
+    title: "CMQA · compartir",
+    kind: "slides",
+    cover: "/images/slides-v-01.webp",
+    pieces: lot("slides-v", 6, "CMQA compartir"),
+  },
+  {
+    id: "slides-vi",
+    title: "Tips para los riñones",
+    kind: "slides",
+    cover: "/images/slides-vi-01.webp",
+    pieces: lot("slides-vi", 5, "Tips para los riñones"),
+  },
+  {
+    id: "slides-vii",
+    title: "Cáncer de mama",
+    kind: "slides",
+    cover: "/images/slides-vii-01.webp",
+    pieces: lot("slides-vii", 6, "Cáncer de mama"),
+  },
+  {
+    id: "slides-viii",
+    title: "Anzoátegui",
+    kind: "slides",
+    cover: "/images/slides-viii-01.webp",
+    pieces: lot("slides-viii", 6, "Anzoátegui"),
+  },
+  {
+    id: "diseno-guia",
+    title: "Guía de estudio",
+    kind: "diseno",
+    cover: "/images/diseno-guia-01.webp",
+    pieces: lot("diseno-guia", 5, "Guía de estudio"),
+  },
+  {
+    id: "diseno-ii",
+    title: "Curso de pestañas",
+    kind: "diseno",
+    cover: "/images/diseno-ii-01.webp",
+    pieces: lot("diseno-ii", 1, "Curso de pestañas"),
+  },
+  {
+    id: "diseno-iii",
+    title: "Plato saludable",
+    kind: "diseno",
+    cover: "/images/diseno-iii-01.webp",
+    pieces: lot("diseno-iii", 3, "Plato saludable"),
+  },
+  {
+    id: "diseno-iv",
+    title: "Taller de rodamientos",
+    kind: "diseno",
+    cover: "/images/diseno-iv-01.webp",
+    pieces: lot("diseno-iv", 7, "Taller de rodamientos"),
+  },
+  {
+    id: "diseno-v",
+    title: "Sellos mecánicos",
+    kind: "diseno",
+    cover: "/images/diseno-v-01.webp",
+    pieces: lot("diseno-v", 1, "Sellos mecánicos"),
+  },
+  {
+    id: "diseno-vi",
+    title: "Día del corazón",
+    kind: "diseno",
+    cover: "/images/diseno-vi-01.webp",
+    pieces: lot("diseno-vi", 1, "Día del corazón"),
+  },
+  {
+    id: "diseno-vii",
+    title: "Flyer Nestyuri",
+    kind: "diseno",
+    cover: "/images/diseno-vii-01.webp",
+    pieces: lot("diseno-vii", 2, "Flyer Nestyuri"),
+  },
+  {
+    id: "diseno-viii",
+    title: "Rapid Express",
+    kind: "diseno",
+    cover: "/images/diseno-viii-01.webp",
+    pieces: lot("diseno-viii", 4, "Rapid Express"),
+  },
+  {
+    id: "diseno-ix",
+    title: "Micropigmentación de cejas",
+    kind: "diseno",
+    cover: "/images/diseno-ix-01.webp",
+    pieces: lot("diseno-ix", 1, "Micropigmentación de cejas"),
+  },
+  {
+    id: "diseno-x",
+    title: "Rosas eternas",
+    kind: "diseno",
+    cover: "/images/diseno-x-01.webp",
+    pieces: lot("diseno-x", 5, "Rosas eternas"),
+  },
+  {
+    id: "diseno-xi",
+    title: "CMQA · jornadas y sorteo",
+    kind: "diseno",
+    cover: "/images/diseno-xi-01.webp",
+    pieces: lot("diseno-xi", 3, "CMQA jornadas y sorteo"),
+  },
+  {
+    id: "monaco",
+    title: "Circuit de Monaco",
+    kind: "diseno",
+    cover: "/images/work-monaco.webp",
     pieces: [
       {
-        src: "/images/work-nestyuri-1.webp",
-        alt: "Septiembre, un mes para la esperanza",
-        title: "Mes para la esperanza",
-      },
-      {
-        src: "/images/work-nestyuri-2.webp",
-        alt: "¿Por qué hablamos de esto?",
-        title: "¿Por qué hablamos de esto?",
-      },
-      {
-        src: "/images/work-nestyuri-4.webp",
-        alt: "La prevención empieza con la información",
-        title: "Prevención e información",
-      },
-      {
-        src: "/images/work-nestyuri-5.webp",
-        alt: "Campaña de prevención Nestyuri Briceño",
-        title: "Campaña",
-      },
-      {
-        src: "/images/work-nestyuri-7.webp",
-        alt: "La prevención empieza contigo",
-        title: "Empieza contigo",
+        src: "/images/work-monaco.webp",
+        alt: "Póster Circuit de Monaco",
+        title: "Póster",
       },
     ],
   },
   {
-    id: "bisturi",
-    title: "Entre Bisturí",
-    kind: "salud",
-    cover: "/images/work-bisturi.webp",
+    id: "alfredo",
+    title: "Alfredo Alexander",
+    kind: "diseno",
+    cover: "/images/work-alfredo.webp",
     pieces: [
       {
-        src: "/images/work-bisturi.webp",
-        alt: "Logo del podcast Entre Bisturí",
-        title: "Identidad",
-      },
-      {
-        src: "/images/work-bisturi-2.webp",
-        alt: "Producción en quirófano",
-        title: "En set",
-      },
-      {
-        src: "/images/work-bisturi-3.webp",
-        alt: "Grabación educativa Entre Bisturí",
-        title: "Diálogo abierto",
+        src: "/images/work-alfredo.webp",
+        alt: "Diseño Alfredo Alexander",
+        title: "Pieza",
       },
     ],
   },
   {
-    id: "cmqa",
-    title: "CMQA",
-    kind: "salud",
-    cover: "/images/work-pulso.webp",
+    id: "isaias",
+    title: "Isaias Mateo",
+    kind: "diseno",
+    cover: "/images/work-isaias.webp",
     pieces: [
       {
-        src: "/images/work-pulso.webp",
-        alt: "Pulso Informativo del Centro Médico Quirúrgico Aragua",
-        title: "Pulso Informativo",
-      },
-      {
-        src: "/images/work-cmqa-1.webp",
-        alt: "Pieza Centro Médico Quirúrgico Aragua",
-        title: "Centro médico",
-      },
-      {
-        src: "/images/work-cmqa-2.webp",
-        alt: "Pieza II Centro Médico Quirúrgico Aragua",
-        title: "Centro médico II",
-      },
-      {
-        src: "/images/work-cmqa-3.webp",
-        alt: "Pieza III Centro Médico Quirúrgico Aragua",
-        title: "Centro médico III",
-      },
-      {
-        src: "/images/work-cmqa-4.webp",
-        alt: "Pieza IV Centro Médico Quirúrgico Aragua",
-        title: "Centro médico IV",
-      },
-      {
-        src: "/images/work-instrumentista.webp",
-        alt: "Homenaje al instrumentista quirúrgico",
-        title: "Instrumentista",
-      },
-      {
-        src: "/images/work-migrana.webp",
-        alt: "Consejos para prevenir la migraña",
-        title: "Migraña",
-      },
-      {
-        src: "/images/work-nestyuri-6.webp",
-        alt: "Stand del Centro Médico Quirúrgico Aragua",
-        title: "Stand",
-      },
-      {
-        src: "/images/work-cmqa-8.webp",
-        alt: "Pieza VIII Centro Médico Quirúrgico Aragua",
-        title: "Centro médico VIII",
-      },
-      {
-        src: "/images/work-cmqa-11.webp",
-        alt: "Pieza XI Centro Médico Quirúrgico Aragua",
-        title: "Centro médico XI",
+        src: "/images/work-isaias.webp",
+        alt: "Diseño Isaias Mateo",
+        title: "Pieza",
       },
     ],
   },
   {
     id: "rim",
-    title: "RIM",
-    kind: "ingenieria",
+    title: "RiM urbano",
+    kind: "diseno",
     cover: "/images/work-rim-urbano.webp",
     pieces: [
       {
@@ -216,8 +331,8 @@ export const designLines: DesignLine[] = [
   },
   {
     id: "bremen",
-    title: "Bremen",
-    kind: "ingenieria",
+    title: "Bremen · sellos",
+    kind: "diseno",
     cover: "/images/work-bremen-1.webp",
     pieces: [
       {
@@ -268,183 +383,211 @@ export const designLines: DesignLine[] = [
     ],
   },
   {
-    id: "simbolos",
-    title: "Símbolos del estado",
-    kind: "cultura",
-    cover: "/images/work-guarico-patrios.webp",
+    id: "cmqa",
+    title: "CMQA",
+    kind: "diseno",
+    cover: "/images/work-cmqa-1.webp",
     pieces: [
       {
-        src: "/images/work-guarico-ubicacion.webp",
-        alt: "Ubicación geográfica de Guárico, entre la cordillera y el llano",
-        title: "Ubicación geográfica",
+        src: "/images/work-cmqa-1.webp",
+        alt: "Pieza Centro Médico Quirúrgico Aragua",
+        title: "Centro médico",
       },
       {
-        src: "/images/work-guarico-himno.webp",
-        alt: "Himno Honor al Grado y palma real",
-        title: "Himno y palma",
+        src: "/images/work-cmqa-2.webp",
+        alt: "Pieza II Centro Médico Quirúrgico Aragua",
+        title: "Centro médico II",
       },
       {
-        src: "/images/work-guarico-patrios.webp",
-        alt: "Bandera y escudo del estado",
-        title: "Símbolos patrios",
+        src: "/images/work-cmqa-3.webp",
+        alt: "Pieza III Centro Médico Quirúrgico Aragua",
+        title: "Centro médico III",
       },
       {
-        src: "/images/work-guarico-gastronomia.webp",
-        alt: "Mondongo, carato de maíz y queso de mano",
-        title: "Gastronomía",
+        src: "/images/work-cmqa-4.webp",
+        alt: "Pieza IV Centro Médico Quirúrgico Aragua",
+        title: "Centro médico IV",
       },
       {
-        src: "/images/work-guarico-poblacion.webp",
-        alt: "Población de Guárico",
-        title: "Población",
+        src: "/images/work-pulso.webp",
+        alt: "Pulso Informativo del Centro Médico Quirúrgico Aragua",
+        title: "Pulso Informativo",
       },
       {
-        src: "/images/work-guarico-origen.webp",
-        alt: "Origen e historia del estado Guárico",
-        title: "Origen e historia",
+        src: "/images/work-instrumentista.webp",
+        alt: "Homenaje al instrumentista quirúrgico",
+        title: "Instrumentista",
       },
       {
-        src: "/images/work-guarico-naturaleza.webp",
-        alt: "Flor de loto y turpial",
-        title: "Naturaleza",
+        src: "/images/work-migrana.webp",
+        alt: "Consejos para prevenir la migraña",
+        title: "Migraña",
       },
       {
-        src: "/images/work-guarico-esteros.webp",
-        alt: "Esteros de Camagúan",
-        title: "Esteros",
+        src: "/images/work-cmqa-8.webp",
+        alt: "Pieza VIII Centro Médico Quirúrgico Aragua",
+        title: "Centro médico VIII",
       },
       {
-        src: "/images/work-guarico-turismo.webp",
-        alt: "Turismo y gastronomía: Morros, termales y embalse",
-        title: "Turismo",
-      },
-      {
-        src: "/images/work-guarico-musica.webp",
-        alt: "Traje típico y música llanera",
-        title: "Traje y música",
+        src: "/images/work-cmqa-11.webp",
+        alt: "Pieza XI Centro Médico Quirúrgico Aragua",
+        title: "Centro médico XI",
       },
     ],
   },
   {
-    id: "monaco",
-    title: "Circuit de Monaco",
-    kind: "cultura",
-    cover: "/images/work-monaco.webp",
+    id: "bisturi",
+    title: "Entre Bisturí",
+    kind: "diseno",
+    cover: "/images/work-bisturi.webp",
     pieces: [
       {
-        src: "/images/work-monaco.webp",
-        alt: "Póster Circuit de Monaco",
-        title: "Póster",
-      },
-    ],
-  },
-  {
-    id: "alfredo",
-    title: "Alfredo Alexander",
-    kind: "cultura",
-    cover: "/images/work-alfredo.webp",
-    pieces: [
-      {
-        src: "/images/work-alfredo.webp",
-        alt: "Diseño Alfredo Alexander",
-        title: "Pieza",
-      },
-    ],
-  },
-  {
-    id: "isaias",
-    title: "Isaias Mateo",
-    kind: "cultura",
-    cover: "/images/work-isaias.webp",
-    pieces: [
-      {
-        src: "/images/work-isaias.webp",
-        alt: "Diseño Isaias Mateo",
-        title: "Pieza",
-      },
-    ],
-  },
-  {
-    id: "raizel-set",
-    title: "Raizel en set",
-    kind: "set",
-    cover: "/images/raizel-4.webp",
-    pieces: [
-      {
-        src: "/images/raizel-4.webp",
-        alt: "Producción con trípode, luces y pantalla",
-        title: "Producción",
+        src: "/images/work-bisturi.webp",
+        alt: "Logo del podcast Entre Bisturí",
+        title: "Identidad",
       },
       {
-        src: "/images/raizel-1.webp",
-        alt: "Raizel Bolivar cubriendo un quirófano con gimbal",
-        title: "Quirófano",
+        src: "/images/work-bisturi-2.webp",
+        alt: "Producción en quirófano",
+        title: "En set",
       },
       {
-        src: "/images/raizel-2.webp",
-        alt: "Grabación educativa con pantalla y trípode",
-        title: "Live",
-      },
-      {
-        src: "/images/raizel-3.webp",
-        alt: "Set con luces de estudio y entrevista",
-        title: "Entrevista",
-      },
-      {
-        src: "/images/raizel-5.webp",
-        alt: "Raizel en set, pieza V",
-        title: "Set V",
-      },
-      {
-        src: "/images/raizel-6.webp",
-        alt: "Raizel en set, pieza VI",
-        title: "Set VI",
-      },
-      {
-        src: "/images/raizel-8.webp",
-        alt: "Raizel en set, pieza VIII",
-        title: "Set VIII",
-      },
-      {
-        src: "/images/raizel-9.webp",
-        alt: "Raizel en set, pieza IX",
-        title: "Set IX",
-      },
-      {
-        src: "/images/work-nestyuri-3.webp",
-        alt: "Raizel Bolivar trabajando con gimbal en un evento",
-        title: "Gimbal en evento",
+        src: "/images/work-bisturi-3.webp",
+        alt: "Grabación educativa Entre Bisturí",
+        title: "Diálogo abierto",
       },
     ],
   },
 ];
 
 export const portfolio = {
-  title: "Cultura, ingeniería, salud y set. Cada encargo en su sitio.",
+  kicker: "Oficio",
+  title: "Diseños, carruseles y diapositivas.",
+  lead: "Entras a la serie y recorres las piezas. Nada suelto en la portada.",
+} as const;
+
+export const workLinks = {
+  kicker: "Portafolio",
+  title: "El oficio, en su sitio.",
+  lead: "La home no abre con portadas. Diseños, fotos y vídeos van cada uno en su enlace.",
+  items: [
+    {
+      href: "#disenos",
+      icon: "branding" as const,
+      title: "Diseños",
+      body: "Carruseles, diapositivas y piezas gráficas. Una serie, un clic.",
+    },
+    {
+      href: "#galerias",
+      icon: "foto" as const,
+      title: "Fotografía",
+      body: "Álbumes en Pixieset y cobertura de set, evento y quirófano.",
+    },
+    {
+      href: "#videos",
+      icon: "video" as const,
+      title: "Vídeos",
+      body: "Play cuando tú quieras. Portada acorde a cada pieza.",
+    },
+  ],
 } as const;
 
 export const galleries = {
   kicker: "Fotografía",
-  title: "Sesiones y cobertura. Cada álbum, sus fotos.",
-  lead: "Retrato de evento, set y quirófano. Entras y ves la serie.",
+  title: "Sesiones y cobertura.",
+  lead: "Primero ella en oficio. Los álbumes grandes viven en Pixieset.",
   albums: [
     {
-      id: "dore",
-      title: "Cumpleaños Lic. Dore",
-      kind: "Evento",
-      cover: "/images/oficio-set.webp",
+      id: "raizel-set",
+      title: "Raizel en set",
+      kind: "Set",
+      cover: "/images/set-portada.webp",
       pieces: [
         {
-          src: "/images/oficio-set.webp",
-          alt: "Producción en lounge durante el cumpleaños",
-          title: "En lounge",
+          src: "/images/set-portada.webp",
+          alt: "Raizel Bolivar con gimbal, luz azul",
+          title: "Portada",
+        },
+        {
+          src: "/images/set-lets-talk.webp",
+          alt: "Raizel Bolivar en café, foto suya",
+          title: "Raizel",
+        },
+        {
+          src: "/images/galeria-lounge.webp",
+          alt: "Raizel en evento, lounge y cava",
+          title: "Evento",
+        },
+        {
+          src: "/images/set-quirofano-grabando.webp",
+          alt: "Raizel grabando una cirugía con gimbal",
+          title: "Quirófano",
+        },
+        {
+          src: "/images/set-gimbal-espejo.webp",
+          alt: "Raizel en scrubs con gimbal",
+          title: "En set",
+        },
+        {
+          src: "/images/set-neumonologa.webp",
+          alt: "Raizel en set con bata, live de salud",
+          title: "Live",
+        },
+        {
+          src: "/images/set-taburete.webp",
+          alt: "Raizel en scrubs, set clínico",
+          title: "Set",
+        },
+        {
+          src: "/images/set-equipo.webp",
+          alt: "Raizel con el equipo en evento",
+          title: "Equipo",
         },
         {
           src: "/images/oficio-crew.webp",
           alt: "Equipo filmando en el lounge",
           title: "El set",
         },
+        {
+          src: "/images/raizel-1.webp",
+          alt: "Raizel Bolivar cubriendo un quirófano con gimbal",
+          title: "Gimbal",
+        },
+        {
+          src: "/images/raizel-4.webp",
+          alt: "Raizel Bolivar en set de producción",
+          title: "Producción",
+        },
       ],
+    },
+    {
+      id: "familia-leon",
+      title: "Familia León Colmenares",
+      kind: "Pixieset",
+      cover: "/images/cover-familia-leon.webp",
+      href: "https://raizelbolivar.pixieset.com/familialeoncolmenares/",
+      pieces: [],
+    },
+    {
+      id: "paulina",
+      title: "Cumpleaños de Paulina",
+      kind: "Sesión",
+      cover: "/images/cover-paulina.webp",
+      pieces: [
+        {
+          src: "/images/cover-paulina.webp",
+          alt: "Paulina en su cumpleaños, princess y cupcake",
+          title: "Paulina",
+        },
+      ],
+    },
+    {
+      id: "jornada",
+      title: "Jornada de traumatología y ortopedia",
+      kind: "Pixieset",
+      cover: "/images/cover-jornada.webp",
+      href: "https://raizelbolivar.pixieset.com/jornadaaniversariadetraumatologiayortopedia/",
+      pieces: [],
     },
     {
       id: "televen",
@@ -459,18 +602,5 @@ export const galleries = {
         },
       ],
     },
-    {
-      id: "quirofano",
-      title: "Quirófano CMQA",
-      kind: "Clínica",
-      cover: "/images/raizel-1.webp",
-      pieces: [
-        {
-          src: "/images/raizel-1.webp",
-          alt: "Cobertura fotográfica en quirófano del Centro Médico Quirúrgico Aragua",
-          title: "En quirófano",
-        },
-      ],
-    },
-  ],
+  ] satisfies PhotoAlbum[],
 } as const;

@@ -8,8 +8,8 @@ import numpy as np
 from PIL import Image, ImageFilter
 
 ROOT = Path(r"c:\Users\pc\Desktop\Nueva carpeta")
-SRC_HIRES = ROOT / "WhatsApp Image 2026-08-17 at 5.38.23 PM.jpeg"
-SRC_WHITE = ROOT / "IMG_0822.JPG.jpeg"
+SRC_HIRES = ROOT / "fuente" / "fotos" / "raizel" / "gimbal-negro.jpeg"
+SRC_WHITE = ROOT / "fuente" / "fotos" / "raizel" / "gimbal-blanco.jpeg"
 OUT_DIR = ROOT / "web" / "public" / "images"
 
 

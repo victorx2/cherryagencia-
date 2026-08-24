@@ -4,7 +4,8 @@ import { Mark, type MarkName } from "./ui/Mark";
 const links: { href: string; label: string; icon: MarkName; external?: boolean }[] =
   [
     { href: "#servicios", label: "Servicios", icon: "branding" },
-    { href: "#oficio", label: "Oficio", icon: "cultura" },
+    { href: "#portafolio", label: "Portafolio", icon: "oficio" },
+    { href: "#disenos", label: "Diseños", icon: "branding" },
     { href: "#galerias", label: "Fotografía", icon: "foto" },
     { href: "#videos", label: "Vídeos", icon: "video" },
     { href: "#nosotros", label: "Esencia", icon: "corporativo" },
@@ -21,7 +22,7 @@ const links: { href: string; label: string; icon: MarkName; external?: boolean }
 
 const oficioLinks: { href: string; label: string; icon: MarkName; external?: boolean }[] =
   [
-    { href: "#oficio", label: "Cultura e ingeniería", icon: "cultura" },
+    { href: "#disenos", label: "Diseños", icon: "branding" },
     { href: "#galerias", label: "Fotografía", icon: "foto" },
     { href: "#videos", label: "Vídeos", icon: "video" },
     {
@@ -38,6 +39,13 @@ export function Footer() {
       <div className="section-inner footer-grid">
         <div>
           <p className="footer-brand">
+            <img
+              className="footer-mark"
+              src="/images/mark-cherry.png"
+              width={36}
+              height={36}
+              alt=""
+            />
             {brand.name}
             <span className="ml-2 font-sans text-[0.65rem] font-medium uppercase tracking-[0.22em] text-gold">
               Agencia

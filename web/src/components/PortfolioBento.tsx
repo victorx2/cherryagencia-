@@ -8,9 +8,10 @@ import {
 } from "../data/portfolio";
 import { CardSlider } from "./CardSlider";
 import { StudioDialog } from "./StudioDialog";
+import { StudioRail } from "./StudioRail";
 import { StudioRibbon } from "./StudioRibbon";
 import { IdleFace } from "./ui/IdleFace";
-import { Mark } from "./ui/Mark";
+import { Mark, type MarkName } from "./ui/Mark";
 import { Section } from "./ui/Section";
 
 function pieceLabel(count: number) {
@@ -19,6 +20,10 @@ function pieceLabel(count: number) {
 
 function kindLabel(kind: StudioKind) {
   return studioKinds.find((item) => item.id === kind)?.label ?? kind;
+}
+
+function kindMark(kind: StudioKind): MarkName {
+  return kind === "slides" ? "briefing" : "branding";
 }
 
 function LineCard({
@@ -46,7 +51,7 @@ function LineCard({
         </span>
         <p>
           <span className="line-kind">
-            <Mark name={item.kind} size={14} />
+            <Mark name={kindMark(item.kind)} size={14} />
             {kindLabel(item.kind)} · {pieceLabel(item.pieces.length)}
           </span>
           {item.title}
@@ -72,16 +77,21 @@ export function PortfolioBento() {
   );
 
   return (
-    <Section id="oficio" title={portfolio.title}>
+    <Section
+      id="disenos"
+      kicker={portfolio.kicker}
+      title={portfolio.title}
+      lead={portfolio.lead}
+    >
       {grouped.map(({ kind, items }) => (
         <div key={kind.id} className="studio-group">
           <StudioRibbon>
             <h3 className="studio-group-title">
-              <Mark name={kind.id} size={28} />
+              <Mark name={kindMark(kind.id)} size={28} />
               {kind.label}
             </h3>
           </StudioRibbon>
-          <div className="gallery-grid" data-count={items.length}>
+          <StudioRail label={kind.label} count={items.length}>
             {items.map((item, index) => (
               <LineCard
                 key={item.id}
@@ -91,7 +101,7 @@ export function PortfolioBento() {
                 onOpen={() => setOpenId(item.id)}
               />
             ))}
-          </div>
+          </StudioRail>
         </div>
       ))}
 

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { galleries } from "../data/portfolio";
 import { CardSlider } from "./CardSlider";
 import { StudioDialog } from "./StudioDialog";
+import { StudioRail } from "./StudioRail";
 import { IdleFace } from "./ui/IdleFace";
 import { Section } from "./ui/Section";
 
@@ -20,32 +21,54 @@ export function Galleries() {
       title={galleries.title}
       lead={galleries.lead}
     >
-      <div className="gallery-grid" data-count={galleries.albums.length}>
-        {galleries.albums.map((item, index) => (
-          <button
-            key={item.id}
-            type="button"
-            className="gallery-card line-cover"
-            aria-haspopup="dialog"
-            aria-expanded={openId === item.id}
-            onClick={() => setOpenId(item.id)}
-          >
-            <IdleFace beat={index}>
-              <span className="gallery-shot">
-                <img src={item.cover} alt="" />
-              </span>
-              <p>
-                <span className="block text-[0.7rem] uppercase tracking-[0.18em] text-gold">
-                  {item.kind} · {pieceLabel(item.pieces.length)}
+      <StudioRail label={galleries.title} count={galleries.albums.length}>
+        {galleries.albums.map((item, index) =>
+          item.href ? (
+            <a
+              key={item.id}
+              href={item.href}
+              className="gallery-card line-cover"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <IdleFace beat={index}>
+                <span className="gallery-shot">
+                  <img src={item.cover} alt="" />
                 </span>
-                {item.title}
-              </p>
-            </IdleFace>
-          </button>
-        ))}
-      </div>
+                <p>
+                  <span className="block text-[0.7rem] uppercase tracking-[0.18em] text-gold">
+                    {item.kind} · Abrir álbum
+                  </span>
+                  {item.title}
+                </p>
+              </IdleFace>
+            </a>
+          ) : (
+            <button
+              key={item.id}
+              type="button"
+              className="gallery-card line-cover"
+              aria-haspopup="dialog"
+              aria-expanded={openId === item.id}
+              onClick={() => setOpenId(item.id)}
+            >
+              <IdleFace beat={index}>
+                <span className="gallery-shot">
+                  <img src={item.cover} alt="" />
+                </span>
+                <p>
+                  <span className="block text-[0.7rem] uppercase tracking-[0.18em] text-gold">
+                    {item.kind} · {pieceLabel(item.pieces.length)}
+                  </span>
+                  {item.title}
+                </p>
+              </IdleFace>
+            </button>
+          ),
+        )}
+      </StudioRail>
 
-      {album ? (
+      {album && !album.href ? (
         <StudioDialog
           kicker={album.kind}
           title={album.title}

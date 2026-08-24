@@ -22,7 +22,7 @@ Al crear la app, secciones, hooks, layout, `src/data/`, o al decidir si extraer 
 - Reutilizar antes de crear.
 - Precios `[PRECIO]`. Testimonios reales o placeholder marcado.
 - No librerías extra si Tailwind + un motion ligero bastan.
-- Esta pasada documental: no crear `src/` todavía.
+- App en `web/src/`. Copy y series en `web/src/data/`.
 
 ## Proceso
 
