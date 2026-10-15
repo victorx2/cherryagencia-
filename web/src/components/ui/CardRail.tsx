@@ -11,7 +11,7 @@ export function CardRail({
     <div className="card-rail" aria-label={label}>
       <div className="card-rail-track" role="list">
         {Children.map(children, (child) => (
-          <div className="card-rail-item" role="listitem" tabIndex={0}>
+          <div className="card-rail-item" role="listitem">
             {child}
           </div>
         ))}

@@ -57,13 +57,12 @@ Sin navbar. Contacto y enlaces en el footer.
 |---|---|---|
 | Hero | `Hero` | Raizel, lote 5:58. `docs/HERO.md`. No PAZ. No stand CMQA. |
 | Qué hacemos | `Pillars` | Valor: acompañamiento, redes, identidad, campañas |
-| Portafolio | `WorkLinks` | Tres enlaces: Diseños / Fotografía / Vídeos |
-| Esencia | `Essence` | Raizel. Oficio, no ruido |
-| Cómo empezamos | `Benefits` | Briefing → oficio → entrega + perks |
-| Carta | `Profile` | Bio y dirección de marca |
 | Oficio | `PortfolioBento` | Series con **título descriptivo** (`docs/ORGANIZACION.md`) |
 | Fotografía | `Galleries` | Pixieset + Raizel en set |
-| Vídeos | `Videos` | Play al clic |
+| Vídeos | `Videos` | Play al clic. La pantalla de presentación también espera el clic |
+| Esencia | `Essence` | Raizel. Oficio, no ruido |
+| Cómo empezamos | `Benefits` | Briefing → oficio → entrega + perks, en columnas legibles |
+| Carta | `Profile` | Bio y dirección de marca |
 | Footer | `Footer` | Teléfonos, mail, Instagram, carta |
 
 CTA primario con mesura: Hero y “Cómo empezamos”. El resto, scroll.

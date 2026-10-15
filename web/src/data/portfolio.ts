@@ -71,7 +71,27 @@ const nestyuriPieces: DesignPiece[] = [
   },
 ];
 
+const dharmaPieces: DesignPiece[] = [
+  {
+    src: "/images/dharma-emociones-01.webp",
+    alt: "El espejo de mis emociones, Dharma Formando Bienestar",
+    title: "El espejo de mis emociones",
+  },
+  {
+    src: "/images/dharma-emociones-02.webp",
+    alt: "Módulos del eneatipo, Dharma",
+    title: "Módulos",
+  },
+];
+
 export const designLines: DesignLine[] = [
+  {
+    id: "dharma-emociones",
+    title: "Dharma · emociones",
+    kind: "slides",
+    cover: "/images/dharma-emociones-01.webp",
+    pieces: dharmaPieces,
+  },
   {
     id: "carruseles",
     title: "Carruseles y diapositivas",
@@ -134,6 +154,34 @@ export const designLines: DesignLine[] = [
     kind: "slides",
     cover: "/images/slides-viii-01.webp",
     pieces: lot("slides-viii", 6, "Anzoátegui"),
+  },
+  {
+    id: "elementos-sagrado",
+    title: "Elementos Sagrado",
+    kind: "diseno",
+    cover: "/images/elementos-01.webp",
+    pieces: lot("elementos", 13, "Elementos Sagrado"),
+  },
+  {
+    id: "jhoa-studio",
+    title: "JHOA Studio",
+    kind: "diseno",
+    cover: "/images/jhoa-01.webp",
+    pieces: lot("jhoa", 3, "JHOA Studio"),
+  },
+  {
+    id: "toma-muestra",
+    title: "Toma de muestra",
+    kind: "diseno",
+    cover: "/images/toma-muestra-01.webp",
+    pieces: lot("toma-muestra", 1, "Toma de muestra a domicilio"),
+  },
+  {
+    id: "asesores-dm",
+    title: "Asesores DM · cierre de año",
+    kind: "diseno",
+    cover: "/images/asesores-dm-01.webp",
+    pieces: lot("asesores-dm", 1, "Asesores DM, cierre de año"),
   },
   {
     id: "diseno-guia",
@@ -561,6 +609,14 @@ export const galleries = {
       ],
     },
     {
+      id: "anos-18",
+      title: "18 años",
+      kind: "Pixieset",
+      cover: "/images/cover-18-anos.webp",
+      href: "https://raizelbolivar.pixieset.com/18anos/",
+      pieces: [],
+    },
+    {
       id: "familia-leon",
       title: "Familia León Colmenares",
       kind: "Pixieset",
@@ -599,6 +655,19 @@ export const galleries = {
           src: "/images/evento-televen.webp",
           alt: "Entrevista con micrófono Televén",
           title: "Cobertura",
+        },
+      ],
+    },
+    {
+      id: "calicanto",
+      title: "Clínica Calicanto",
+      kind: "Cobertura",
+      cover: "/images/calicanto-01.webp",
+      pieces: [
+        {
+          src: "/images/calicanto-01.webp",
+          alt: "Cobertura gráfica de Clínica Calicanto",
+          title: "Clínica Calicanto",
         },
       ],
     },

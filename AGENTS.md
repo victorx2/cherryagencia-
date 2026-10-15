@@ -77,17 +77,16 @@ Orden de conversión (home actual):
 ```text
 HERO
 → QUÉ HACEMOS (valor)
-→ PORTAFOLIO (enlaces: Diseños / Fotos / Vídeos)
+→ DISEÑOS + FOTOS + VÍDEOS (el oficio, enseguida)
 → ESENCIA (Raizel)
 → CÓMO EMPEZAMOS + CTA
 → CARTA
-→ DISEÑOS + FOTOS + VÍDEOS (abajo, no en el primer scroll)
 → FOOTER
 ```
 
 Mejorar esta estructura solo si la alternativa es más clara, premium y original. No copiar las secciones literales de millonariosconscientes.co.
 
-Componentes en uso: `Hero`, `Pillars`, `WorkLinks`, `Essence`, `Benefits`, `Profile`, `PortfolioBento`, `Galleries`, `Videos`, `Footer`. No reponer navbar salvo que se pida.
+Componentes en uso: `Hero`, `Pillars`, `PortfolioBento`, `Galleries`, `Videos`, `Essence`, `Benefits`, `Profile`, `Footer`. No reponer navbar salvo que se pida.
 
 ---
 

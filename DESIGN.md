@@ -128,13 +128,13 @@ background:
 
 Glow discreto. Si parece neón de discoteca, bajar opacidad.
 
-Hero (primer bloque): mancha `radial-gradient` del `--wine` detrás de la figura (equivalente propio al “blur” de referencia; no SVG ajeno). Capas: glow → ticker → retrato centrado → copy y CTA encima. En móvil, foto a escena. En escritorio, `contain` (máx. ~44rem) para no aplastar el retrato. Overlay ink inferior. CTA pill cherry, no naranja.
+Hero (primer bloque): collage «Ideas y contenido que conectan», a todo el ancho, en su propia carpeta `images/portada/`. Desde 768 px, `escritorio.webp` (1983×793). En móvil, `movil.webp` (853×1843). El titular y el CTA van debajo de la pieza. El ticker no se muestra. CTA pill cherry, no naranja.
 
-**Puntos:** un solo retículo `--dots` a `--dot-cell` 18px, champagne. Vive en atmósfera y gira lento (órbita 72s, solo `transform`). Las cintas no pintan otro grid: dejan ver el mismo. Nunca un segundo retículo en el hero. No mesh carbon ni nodos naranja.
+**Puntos:** un solo retículo `--dots` a `--dot-cell` 18px, champagne. Vive en atmósfera al 32% de opacidad y gira lento (órbita 72s, solo `transform`). Las cintas no pintan otro grid: dejan ver el mismo. Nunca un segundo retículo en el hero. No mesh carbon ni nodos naranja.
 
 **Campo único:** `--field` una vez, `background-attachment: fixed` en `body` (y CTA). El hero no pinta otro degradé a todo el ancho: el oficio ve el mismo vino y el mismo retículo. Prohibido un segundo linear-gradient de marca.
 
-Palabra clave del hero (`entiende`): serif itálica + degradado gold → cherry con `textShine`. Nunca `#FF9D00` / `#FF4D00` ni Times New Roman.
+Palabra clave del hero: serif itálica en `--gold-bright`, sin bucle de brillo. Nunca `#FF9D00` / `#FF4D00` ni Times New Roman.
 
 ---
 
@@ -163,7 +163,7 @@ Line-height display: 1.02–1.12. Body: 1.6. Tracking display: −0.035em a −0
 
 Escala (px): `4, 8, 12, 16, 24, 32, 48, 64, 80, 96, 128, 160`.
 
-Secciones: padding vertical `clamp(4rem, 8vw, 8rem)`.  
+Secciones: padding vertical `clamp(3rem, 5vw, 5rem)`.  
 No mezclar valores fuera de escala.
 
 ---
@@ -260,14 +260,15 @@ Ritmo de una cinta ancha (aire, full-bleed, título a la izquierda). Piel de la 
 - Padding generoso (24–32)
 - Grid irregular: spans 2×2, 2×1, 1×1 — no 8 cards iguales
 - Hover: borde cherry 20%, glow bento, imagen `scale(1.04)` max
-- Hairline gold 1px que aparece de izquierda a derecha en hover de pilares
-- Pilares de Qué hacemos: cada uno un lavado de marca (gold, rose, champagne, acero) sobre vino. En hover el lavado sube a opacidad 1 (500ms). No teal/verde de plantilla, no card blanca, no Poppins.
-- Carril de cartas (`CardRail`): mazo solapado (margen negativo + sombra ink a la izquierda), centrado con `safe center` cuando cabe. En reposo, brillo ~70%. Hover/foco: `translateY` (≤1.35rem), z-index al frente, brillo 1, lavado vino. Disco de paso = círculo `--primary` con anillo gold, no naranja millonario. Sin Swiper, sin mesh carbon, sin círculos #ff5500.
+- Qué hacemos: lista editorial `.edition`. Índice serif en `--gold-bright` (`01`–`04`), título serif, cuerpo sans, sello pequeño. Un solo velo vino en las cuatro. En escritorio, 01 y 04 ocupan 7 columnas y 02 y 03 ocupan 5. Hover: borde oro y el velo sube; en reposo el mismo tono. No un lavado distinto por carta.
+- El oficio, en su sitio: tres entradas `.edition-link` (índice, título, una línea, flecha) hacia `#disenos`, `#galerias` y `#videos`. Una sola vez, encima de los carruseles. No una segunda grilla de cajas con icono.
+- Cómo empezamos: grilla legible, sin mazo solapado. El número es el mismo índice en oro, no un disco de color distinto por carta.
+- Carril de cartas (`CardRail`): grilla (1 columna, 2 desde 768, 3 desde 1100). Sin margen negativo ni brillo apagado. Sin Swiper, sin mesh carbon, sin círculos #ff5500.
 - Oficio largo (`StudioRail` / `.snap-rail`): diseños, diapositivas, sesiones y vídeos en **una fila** con scroll horizontal y snap. Flechas hairline gold. Sin autoplay, sin loop de atención. El visitante recorre el mazo; no una grilla de 20 filas.
 
 Vídeos (`#videos`): cards 9/16 en el mismo carril snap. Play pill `--field`. Sin autoplay con sonido. Un vídeo a la vez.
 
-Showreel (`#presentacion`): bajo la grilla de `#videos`. Marco cine (bezel ink, hairline gold, sombra). 16/9, no full-bleed. Loop mudo; **Escuchar el vídeo**. No clonar RIM.
+Showreel (`#presentacion`): bajo la grilla de `#videos`. Marco cine (bezel ink, hairline gold, sombra). 16/9, no full-bleed. Poster quieto; **Escuchar el vídeo** lo reproduce. Sin autoplay. No clonar RIM.
 
 ---
 

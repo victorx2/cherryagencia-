@@ -4,8 +4,6 @@ import { Button } from "./ui/Button";
 import { CardRail } from "./ui/CardRail";
 import { Section } from "./ui/Section";
 
-const tones = ["branding", "redes", "corporativo"] as const;
-
 export function Benefits() {
   return (
     <Section id="beneficios" kicker={benefits.kicker} title={benefits.title}>
@@ -13,13 +11,9 @@ export function Benefits() {
         <p className="section-kicker">{benefits.methodTitle}</p>
         <CardRail label={benefits.methodTitle}>
           {benefits.method.map((item, index) => (
-            <article
-              key={item.title}
-              className="value-card"
-              data-tone={tones[index]}
-            >
-              <span className="step-disc" aria-hidden="true">
-                {index + 1}
+            <article key={item.title} className="value-card">
+              <span className="edition-index" aria-hidden="true">
+                {String(index + 1).padStart(2, "0")}
               </span>
               <h3>{item.title}</h3>
               <p className="card-copy">{item.body}</p>
@@ -32,13 +26,9 @@ export function Benefits() {
         <p className="section-kicker">{benefits.perksTitle}</p>
         <CardRail label={benefits.perksTitle}>
           {benefits.perks.map((item, index) => (
-            <article
-              key={item.title}
-              className="perk"
-              data-tone={tones[index]}
-            >
-              <span className="step-disc" aria-hidden="true">
-                {index + 1}
+            <article key={item.title} className="perk">
+              <span className="edition-index" aria-hidden="true">
+                {String(index + 1).padStart(2, "0")}
               </span>
               <h3>{item.title}</h3>
               <p className="card-copy">{item.body}</p>

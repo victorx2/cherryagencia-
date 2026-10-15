@@ -19,7 +19,7 @@ El crudo está en `fuente/`. Lo publicado está en `web/public/images/` (WebP) y
 
 Las piezas de clientes (CMQA, RiM, podcast) ilustran **oficio**, no identidad Cherry.
 
-Portadas de **Sesiones y cobertura**: la foto del álbum, no un recorte de set. Jornada = `cover-jornada`. Paulina = `cover-paulina`. Familia León = `cover-familia-leon`. Raizel en set = `set-portada`.
+Portadas de **Sesiones y cobertura**: la foto del álbum, no un recorte de set. Jornada = `cover-jornada`. Paulina = `cover-paulina`. Familia León = `cover-familia-leon`. Raizel en set = `set-portada`. 18 años abre `https://raizelbolivar.pixieset.com/18anos/` con portada tipográfica `cover-18-anos` (el álbum no deja bajar la foto). Clínica Calicanto = `calicanto-01`.
 
 ---
 

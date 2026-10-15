@@ -12,7 +12,13 @@ Origen WhatsApp, grupo Cherry Agencia, lunes **17/8/2026 ~17:58**:
 
 Cómo se archivan esos envíos: `docs/ORGANIZACION.md` y `fuente/fotos/raizel/`.
 
-El hero ya está en `web/src/components/Hero.tsx`. Foto actual: `hero-raizel-set.webp` (Raizel con gimbal y marca Cherry, WhatsApp 23/8/2026 22:08). Copy y CTA no cambian. Sin navbar. No usar la premiación de jornada como LCP.
+El hero ya está en `web/src/components/Hero.tsx`. La portada vive aparte del resto de imágenes:
+
+- Escritorio: `web/public/images/portada/escritorio.webp`
+- Móvil: `web/public/images/portada/movil.webp`
+- Crudo: `fuente/fotos/portada/escritorio.png` y `movil.png`
+
+Collage «Ideas y contenido que conectan», con el logo Cherry y la frase de la agencia dentro de la pieza. El titular y el botón quedan debajo, sin taparla. Sin navbar. No usar la premiación de jornada como LCP.
 
 ---
 
@@ -35,7 +41,7 @@ Prioridad: foto **23/8/2026 22:08** (Raizel + gimbal + marca Cherry). El lote 5:
 | 2 | `fuente/fotos/raizel/quirofano-gimbal.jpeg` | Trabajando | Gimbal en quirófano; **no** stand CMQA |
 | 3 | `fuente/fotos/raizel/gimbal-blanco.jpeg` | (recorte) | Perfil + gimbal, fondo blanco |
 
-LCP publicada: `web/public/images/hero-raizel-set.webp`.  
+LCP publicada: `web/public/images/portada/escritorio.webp` (móvil: `movil.webp`).  
 `alt`: `Raizel Bolivar trabajando con gimbal`.  
 `fetchpriority="high"`.
 
@@ -76,7 +82,7 @@ Headline:
 > **rentables** entre tu marca y nuestra  
 > **comunidad**.
 
-Énfasis (mismo `hero-emphasis` / `textShine` que tenía *entiende*): espacios, conexiones, rentables, comunidad. Gold → cherry. No naranja millonario.
+Énfasis (`hero-emphasis`): espacios, conexiones, rentables, comunidad. Serif itálica en gold claro, sin animación de brillo. No naranja millonario.
 
 Subhead:
 
@@ -96,7 +102,7 @@ Cinco capas propias (receta de ritmo, piel Cherry). No `object-cover` a pantalla
 
 1. **Glow** — `radial-gradient` cherry/burgundy, centrado detrás de la figura, `z-index: 1`
 2. **Punticos** — malla ivory, `z-index: 2`
-3. **Marquesina** — `Cherry Agencia · Cultura e ingeniería`, serif enorme, `z-index: 3` (detrás de la figura)
+3. **Marquesina** — `Cherry Agencia · Cultura e ingeniería`, serif contenido y bajo contraste, `z-index: 3` (detrás de la figura)
 4. **Figura** — `hero-raizel.webp` recorte con alfa. Fuente: `fuente/fotos/raizel/gimbal-blanco.jpeg`. Misma pose que `gimbal-negro.jpeg`.
 5. **Barra de copy** — `z-index: 5`, degradado ink en el tercio inferior.
 

@@ -9,10 +9,15 @@ export function Pillars() {
       kicker="Qué hacemos"
       title="Oficio para marcas que quieren verse con precisión."
     >
-      <div className="pillars">
-        {services.map((item) => (
-          <article key={item.id} className="pillar" data-tone={item.id}>
-            <Mark name={item.id as MarkName} size={28} well />
+      <div className="edition">
+        {services.map((item, index) => (
+          <article key={item.id} className="edition-card">
+            <div className="edition-head">
+              <span className="edition-index" aria-hidden="true">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <Mark name={item.id as MarkName} size={22} />
+            </div>
             <h3>{item.title}</h3>
             <p>{item.body}</p>
           </article>

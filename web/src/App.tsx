@@ -7,6 +7,7 @@ import { GrainOverlay } from "./components/GrainOverlay";
 import { Hero } from "./components/Hero";
 import { Pillars } from "./components/Pillars";
 import { Profile } from "./components/Profile";
+import { Testimonial } from "./components/Testimonial";
 import { PortfolioBento } from "./components/PortfolioBento";
 import { Videos } from "./components/Videos";
 import { WorkLinks } from "./components/WorkLinks";
@@ -26,12 +27,13 @@ export default function App() {
         <Hero />
         <Pillars />
         <WorkLinks />
+        <PortfolioBento />
+        <Galleries />
+        <Testimonial />
+        <Videos />
         <Essence />
         <Benefits />
         <Profile />
-        <PortfolioBento />
-        <Galleries />
-        <Videos />
       </main>
       <Footer />
     </>

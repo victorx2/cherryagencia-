@@ -4,7 +4,7 @@ import { Mark, type MarkName } from "./ui/Mark";
 const links: { href: string; label: string; icon: MarkName; external?: boolean }[] =
   [
     { href: "#servicios", label: "Servicios", icon: "branding" },
-    { href: "#portafolio", label: "Portafolio", icon: "oficio" },
+    { href: "#disenos", label: "Portafolio", icon: "oficio" },
     { href: "#disenos", label: "Diseños", icon: "branding" },
     { href: "#galerias", label: "Fotografía", icon: "foto" },
     { href: "#videos", label: "Vídeos", icon: "video" },

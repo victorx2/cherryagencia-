@@ -8,9 +8,13 @@ function CinemaClip({ clip }: { clip: ShowreelClip }) {
   function toggleSound() {
     const next = !soundOn;
     setSoundOn(next);
+    const node = video.current;
+    if (!node) return;
     if (next) {
-      void video.current?.play();
+      void node.play();
+      return;
     }
+    node.pause();
   }
 
   return (
@@ -20,11 +24,9 @@ function CinemaClip({ clip }: { clip: ShowreelClip }) {
           <video
             ref={video}
             poster={clip.poster}
-            autoPlay
             muted={!soundOn}
-            loop
             playsInline
-            preload="metadata"
+            preload="none"
           >
             <source src={clip.src} type="video/mp4" />
           </video>

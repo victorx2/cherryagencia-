@@ -48,6 +48,7 @@ Los ids y los WebP publicados no se renombran. Cambia el **título** que ve el v
 
 | `fuente/` | Título en la web | Slug publicado |
 |---|---|---|
+| `diapositivas/dharma-emociones` | Dharma · emociones | `dharma-emociones` |
 | `diapositivas/obesidad` | Obesidad · cómo se trata | `slides-tratamiento` |
 | `diapositivas/abundancia` | Principios de abundancia | `slides-abundancia` |
 | `diapositivas/dinamica-tiempo` | Dinámica del tiempo | `slides-ii` |
@@ -57,6 +58,10 @@ Los ids y los WebP publicados no se renombran. Cambia el **título** que ve el v
 | `diapositivas/cancer-mama` | Cáncer de mama | `slides-vii` |
 | `diapositivas/anzoategui` | Anzoátegui | `slides-viii` |
 | `fotos/nestyuri` | Carruseles y diapositivas | `work-nestyuri` |
+| `disenos/elementos-sagrado` | Elementos Sagrado | `elementos` |
+| `disenos/jhoa-studio` | JHOA Studio | `jhoa` |
+| `disenos/toma-muestra` | Toma de muestra | `toma-muestra` |
+| `disenos/asesores-dm` | Asesores DM · cierre de año | `asesores-dm` |
 | `disenos/guia-estudio` | Guía de estudio | `diseno-guia` |
 | `disenos/curso-pestanas` | Curso de pestañas | `diseno-ii` |
 | `disenos/plato-saludable` | Plato saludable | `diseno-iii` |
@@ -75,6 +80,8 @@ Los ids y los WebP publicados no se renombran. Cambia el **título** que ve el v
 | `disenos/alfredo` | Alfredo Alexander | `work-alfredo` |
 | `disenos/isaias` | Isaias Mateo | `work-isaias` |
 | `disenos/bisturi` | Entre Bisturí | `work-bisturi` |
+| `fotos/18-anos` | 18 años (Pixieset) | `cover-18-anos` |
+| `fotos/calicanto` | Clínica Calicanto | `calicanto` |
 | `fotos/raizel` (lote XV) | Raizel en set | `set-lets-talk` |
 | `fotos/raizel/gimbal-azul.jpeg` | Portada Raizel en set | `set-portada` |
 | `fotos/raizel/gimbal-cherry.jpeg` | Hero LCP | `hero-raizel-set` |

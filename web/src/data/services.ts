@@ -2,22 +2,22 @@ export const services = [
   {
     id: "corporativo",
     title: "Acompañamiento corporativo",
-    body: "Presencia con criterio para marcas e instituciones que necesitan verse con precisión.",
+    body: "Dirección de la presencia: mensaje, calendario de piezas y el criterio con el que la marca se presenta.",
   },
   {
     id: "redes",
     title: "Gestión de redes",
-    body: "Series de contenido con estrategia. No posts sueltos: un oficio continuo.",
+    body: "Plan del mes y series listas para publicar. Cada pieza sigue una línea, no un post suelto.",
   },
   {
     id: "branding",
     title: "Identidad visual",
-    body: "Sistemas que se reconocen: industria, salud, cultura y el detalle que sostiene la marca.",
+    body: "Sistema visual: marca, plantillas y piezas que se reconocen en industria, salud y cultura.",
   },
   {
     id: "marketing",
     title: "Campañas y piezas",
-    body: "Diseño editorial y de campaña que aguanta el feed y el zoom.",
+    body: "Campaña editorial para feed y evento: concepto, piezas y cobertura cuando el encargo pide set.",
   },
 ] as const;
 

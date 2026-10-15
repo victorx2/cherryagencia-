@@ -34,12 +34,17 @@ export function Hero() {
 
       <div className="hero-figure">
         <picture>
-          <source type="image/webp" srcSet="/images/hero-raizel-set.webp" />
+          <source
+            media="(min-width: 768px)"
+            type="image/webp"
+            srcSet="/images/portada/escritorio.webp"
+          />
+          <source type="image/webp" srcSet="/images/portada/movil.webp" />
           <img
-            src="/images/hero-raizel-set.webp"
-            alt="Raizel Bolivar trabajando con gimbal"
-            width={983}
-            height={1280}
+            src="/images/portada/movil.webp"
+            alt="Raizel Bolivar. Ideas y contenido que conectan."
+            width={853}
+            height={1843}
             fetchPriority="high"
           />
         </picture>
