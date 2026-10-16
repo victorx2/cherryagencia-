@@ -113,6 +113,7 @@ Antes de publicar: derechos de clientes, deporte y terceros.
 
 | Origen | Público | Rol |
 |---|---|---|
+| `fuente/videos/hernia.mp4` | `web/public/videos/hernia.mp4` | Hernia. Reel vertical. Poster: toma del vídeo |
 | `fuente/videos/raizel-01.mp4` | `web/public/videos/raizel-video-1.mp4` | Quirófano. Poster: toma del vídeo |
 | `fuente/videos/raizel-02.mp4` | `web/public/videos/raizel-video-2.mp4` | En lounge. Poster: toma del vídeo |
 | `fuente/videos/raizel-03.mp4` | `web/public/videos/pulso-informativo.mp4` | Pulso Informativo. Poster: toma del vídeo |

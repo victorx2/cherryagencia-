@@ -12,6 +12,13 @@ export const videos = {
   lead: "Set, cobertura y series. Sin autoplay: tú entras.",
   items: [
     {
+      id: "hernia",
+      title: "Hernia",
+      kind: "Salud",
+      src: "/videos/hernia.mp4",
+      poster: "/images/poster-hernia.webp",
+    },
+    {
       id: "quirófano",
       title: "Quirófano",
       kind: "En set",
